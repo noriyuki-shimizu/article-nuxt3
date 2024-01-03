@@ -1,0 +1,46 @@
+{
+  "fix": true,
+  "extends": [
+    "stylelint-config-recess-order",
+    "stylelint-config-recommended",
+    "stylelint-config-standard",
+    "stylelint-config-recommended-vue"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.css"
+      ],
+      "customSyntax": "postcss"
+    },
+    {
+      "files": [
+        "**/*.scss"
+      ],
+      "customSyntax": "postcss-scss"
+    },
+    {
+      "files": [
+        "*.vue",
+        "**/*.vue"
+      ],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "use",
+          "include",
+          "mixin"
+        ]
+      }
+    ]
+  }
+}

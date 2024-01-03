@@ -1,0 +1,27 @@
+{
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue"
+  ],
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ],
+  "stylelint.configFile": "./.stylelintrc",
+  "css.validate": false,
+  "scss.validate": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "typescript.referencesCodeLens.enabled": true,
+  "docwriter.language": "Japanese"
+}

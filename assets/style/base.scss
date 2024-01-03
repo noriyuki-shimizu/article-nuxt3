@@ -1,0 +1,59 @@
+:root {
+    --vt-c-white: #fff;
+    --vt-c-white-soft: #f8f8f8;
+    --vt-c-white-mute: #f2f2f2;
+    --vt-c-black: #181818;
+    --vt-c-black-soft: #222;
+    --vt-c-black-mute: #282828;
+    --vt-c-indigo: #2c3e50;
+    --vt-c-amaranth: #ed4956;
+    --vt-c-silver: #ccc;
+    --vt-c-mariner: #287cc4;
+    --vt-c-accent: #00EE;
+    --vt-c-deep-accent: #551A8B;
+    --vt-c-fruit-salad: #4caf50;
+    --vt-c-divider-light-1: rgb(60 60 60 / 29%);
+    --vt-c-divider-light-2: rgb(60 60 60 / 12%);
+    --vt-c-divider-dark-1: rgb(84 84 84 / 65%);
+    --vt-c-divider-dark-2: rgb(84 84 84 / 48%);
+    --vt-c-text-light-1: var(--vt-c-indigo);
+    --vt-c-text-light-2: rgb(60 60 60 / 66%);
+    --vt-c-text-dark-1: var(--vt-c-white);
+    --vt-c-text-dark-2: rgb(235 235 235 / 64%);
+
+    /* semantic color variables for this project */
+    --color-background: var(--vt-c-white);
+    --color-background-soft: var(--vt-c-white-soft);
+    --color-background-mute: var(--vt-c-white-mute);
+    --color-background-tag: var(--vt-c-text-dark-2);
+    --color-background-tag-hover: #dfe0e0;
+    --color-border: var(--vt-c-divider-light-2);
+    --color-border-hover: var(--vt-c-divider-light-1);
+    --color-heading: var(--vt-c-text-light-1);
+    --color-text: var(--vt-c-text-light-1);
+    --section-gap: 160px;
+}
+
+html {
+    height: 100%;
+    font-family: Kosugi, sans-serif;
+    color: var(--vt-c-text-light-1)
+}
+
+a {
+    color: var(--vt-c-mariner);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: var(--vt-c-deep-accent);
+    }
+}
+
+svg {
+    width: 16px;
+    height: 16px;
+}
