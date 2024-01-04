@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ListItem from '../ListItem/index.vue'
 import { usePageApiStore } from '@/store/page/articles'
 
 /** Page API Store */
@@ -16,39 +17,11 @@ const qiitaArticles = pageApiStore.qiitaArticles
       </h1>
       <section :class="$style['body__list']">
         <template v-if="LangUtil.isNull(qiitaArticles)">
-          記事情報がありません。。。
+          <span>記事情報が見つかりませんでした。。。</span>
         </template>
         <template v-else>
           <template v-for="article in qiitaArticles" :key="article.id">
-            <article :class="[$style['body__list-item'], $style['list-item']]">
-              <NuxtLink :class="$style['list-item__link-bridge']" :to="article.url" target="_blank" :aria-label="`${article.title}へ遷移`" />
-              <header :class="$style['list-item__header']">
-                <img :alt="article.userId" :src="article.userProfileImageUrl" :class="$style['list-item__img']" height="32" width="32">
-                <div :class="$style['list-item__description']">
-                  <NuxtLink :to="`https://qiita.com/${article.userId}`" :class="$style['list-item__link']">
-                    @{{ article.userId }}
-                    <template v-if="!LangUtil.isEmpty(article.userName)">
-                      ({{ article.userName }})
-                    </template>
-                  </NuxtLink>
-                  <span :class="$style['list-item__sub-text']">作成日: {{ article.createdAt }}</span>
-                </div>
-              </header>
-              <h2 :class="$style['list-item__title']">
-                {{ article.title }}
-              </h2>
-              <footer :class="$style['list-item__footer']">
-                <ul :class="$style['list-item__tag-list']">
-                  <template v-for="tagName in article.tagNames" :key="`${article.id}-${tagName}`">
-                    <li :class="$style['list-item__tag-item']">
-                      <NuxtLink :to="`https://qiita.com/tags/${tagName.toLowerCase()}`" :class="$style['list-item__tag-link']">
-                        {{ tagName }}
-                      </NuxtLink>
-                    </li>
-                  </template>
-                </ul>
-              </footer>
-            </article>
+            <ListItem :article="article" :class="$style['body__list-item']" />
           </template>
         </template>
       </section>
