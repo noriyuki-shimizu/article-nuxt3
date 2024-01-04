@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import SearchIconSvg from '@/assets/svg/search-icon.svg?component'
+
+useSeoMeta({
+  title: '技術記事閲覧サイト',
+  description: '技術に関する記事を一覧で閲覧できるサイトです。'
+})
 </script>
 
 <template>
@@ -20,7 +25,7 @@ import SearchIconSvg from '@/assets/svg/search-icon.svg?component'
       </ul>
       <form :class="[$style['body__search-form'], $style['search-form']]">
         <input type="text" placeholder="キーワード検索" :class="$style['search-form__input']">
-        <button type="submit" :class="$style['search-form__button']">
+        <button type="submit" title="search" :class="$style['search-form__button']">
           <SearchIconSvg />
         </button>
       </form>

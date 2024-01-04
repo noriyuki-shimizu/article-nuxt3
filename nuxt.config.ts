@@ -9,9 +9,14 @@ export default defineNuxtConfig({
       qiitaAccessToken: ''
     }
   },
-  plugins: [
-    '~/plugins/rest/index.ts'
-  ],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ja'
+      }
+    }
+  },
+  plugins: ['~/plugins/rest/index.ts'],
   imports: {
     dirs: ['composables/*/index.{ts,js,mjs,mts}', 'utils/*/index.{ts,js,mjs,mts}']
   },

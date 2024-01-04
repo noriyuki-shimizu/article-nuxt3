@@ -22,6 +22,11 @@ definePageMeta({
   ]
 })
 
+useSeoMeta({
+  title: '技術記事一覧',
+  description: '技術に関する記事を一覧で閲覧できます。'
+})
+
 /** Page API Store */
 const pageApiStore = usePageApiStore()
 
@@ -42,7 +47,7 @@ const qiitaArticles = pageApiStore.qiitaArticles
         <template v-else>
           <template v-for="article in qiitaArticles" :key="article.id">
             <article :class="[$style['body__list-item'], $style['list-item']]">
-              <NuxtLink :class="$style['list-item__link-bridge']" :to="article.url" target="_blank" />
+              <NuxtLink :class="$style['list-item__link-bridge']" :to="article.url" target="_blank" :aria-label="`${article.title}へ遷移`" />
               <header :class="$style['list-item__header']">
                 <img :alt="article.userId" :src="article.userProfileImageUrl" :class="$style['list-item__img']" height="32" width="32">
                 <div :class="$style['list-item__description']">
