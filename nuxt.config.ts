@@ -30,5 +30,6 @@ export default defineNuxtConfig({
       include: ['../types/lib/index.d.ts'],
       exclude: ['../test/**', '../**/*.spec.ts']
     }
-  }
+  },
+  components: false
 })
