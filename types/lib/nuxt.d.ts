@@ -14,8 +14,6 @@ declare module '#app' {
       request: FetchRawParameters<T>[0],
       options?: FetchRawParameters<T>[1]
     ) => Promise<AppFetchResponse<T>>
-    /** dayjs */
-    $dayjs(date?: ConfigType): Dayjs
   }
 }
 
@@ -31,8 +29,6 @@ declare module '@vue/runtime-core' {
       request: FetchRawParameters<T>[0],
       options?: FetchRawParameters<T>[1]
     ) => Promise<AppFetchResponse<T>>
-    /** dayjs */
-    $dayjs(date?: ConfigType): Dayjs
   }
 }
 
