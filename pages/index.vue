@@ -61,7 +61,7 @@ import SearchIconSvg from '@/assets/svg/search-icon.svg?component'
 
   &__input {
     width: 100%;
-    padding: 8px;
+    padding: 8px 56px 8px 16px;
     border: 1px solid var(--color-border);
     border-radius: 8px;
   }
