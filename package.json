@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint:e": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "lint:s": "stylelint '**/*.{css,scss,vue}' --ignore-path .gitignore",
+    "format": "npm run format:e && npm run format:s",
     "format:e": "npm run lint:e -- --fix",
     "format:s": "npm run lint:s -- --fix"
   },
