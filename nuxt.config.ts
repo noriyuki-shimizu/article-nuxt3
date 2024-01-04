@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     }
   },
   plugins: ['~/plugins/rest/index.ts'],
+  modules: ['@nuxt/image'],
   imports: {
     dirs: ['composables/*/index.{ts,js,mjs,mts}', 'utils/*/index.{ts,js,mjs,mts}']
   },
