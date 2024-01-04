@@ -24,7 +24,10 @@ export const usePageApiStore = () => {
   }
 
   const actions = {
-    async fetchArticles () {
+    /**
+     * 記事一覧を取得し、レスポンスデータをView Modelに変換する
+     */
+    async fetchArticles (): Promise<void> {
       const response = await getQiitaArticlesRequest({ sort: 'updated', page: 1 })
       _state.value.qiitaArticles = convertApiResponseToViewModel(response._data)
     }
