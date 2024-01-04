@@ -22,11 +22,16 @@ import GitHubIconSvg from '@/assets/svg/github-icon.svg?component'
     position: relative;
     padding: 24px 24px 72px;
 
+    &__main {
+      z-index: 1;
+    }
+
     &__footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
     }
 }
 
@@ -37,13 +42,13 @@ import GitHubIconSvg from '@/assets/svg/github-icon.svg?component'
     background-color: var(--color-background);
 
     &__link {
-        display: flex;
-        align-items: center;
-        margin-left: 24px;
+      display: flex;
+      align-items: center;
+      margin-left: 24px;
     }
 
     &__link-text {
-        margin-left: 8px;
+      margin-left: 8px;
     }
 
     &__icon {
