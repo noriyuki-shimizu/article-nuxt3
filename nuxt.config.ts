@@ -20,14 +20,9 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['composables/*/index.{ts,js,mjs,mts}', 'utils/*/index.{ts,js,mjs,mts}']
   },
-  css: [
-    'ress',
-    '~/assets/style/index.scss'
-  ],
+  css: ['ress', '~/assets/style/index.scss'],
   vite: {
-    plugins: [
-      viteSvgLoader()
-    ]
+    plugins: [viteSvgLoader()]
   },
   typescript: {
     typeCheck: true,
