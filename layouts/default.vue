@@ -9,7 +9,7 @@ import GitHubIconSvg from '@/assets/svg/github-icon.svg?component'
     </main>
     <footer :class="[$style['layout-container__footer'], $style['footer']]">
       <span>@ 2024 Noriyuki Shimizu</span>
-      <NuxtLink :class="$style['footer__link']" to="https://github.com/noriyuki-shimizu" target="_blank">
+      <NuxtLink :class="$style['footer__link']" to="https://github.com/noriyuki-shimizu/article-nuxt3" target="_blank">
         <GitHubIconSvg :class="$style['footer__icon']" />
         <span :class="$style['footer__link-text']">GitHub</span>
       </NuxtLink>
