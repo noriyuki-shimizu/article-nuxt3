@@ -19,14 +19,16 @@
     --vt-c-text-light-1: var(--vt-c-indigo);
     --vt-c-text-light-2: rgb(60 60 60 / 66%);
     --vt-c-text-dark-1: var(--vt-c-white);
-    --vt-c-text-dark-2: rgb(235 235 235 / 64%);
+    --vt-c-text-dark-2: #F2F2F2;
+    --vt-c-text-dark-3: rgb(235 235 235 / 64%);
 
     /* semantic color variables for this project */
     --color-background: var(--vt-c-white);
     --color-background-soft: var(--vt-c-white-soft);
     --color-background-mute: var(--vt-c-white-mute);
-    --color-background-tag: var(--vt-c-text-dark-2);
-    --color-background-tag-hover: #dfe0e0;
+    --color-background-tag: var(--vt-c-text-dark-3);
+    --color-background-tag-hover: var(--vt-c-text-dark-2);
+    --color-background-snippet: var(--vt-c-text-dark-2);
     --color-border: var(--vt-c-divider-light-2);
     --color-border-hover: var(--vt-c-divider-light-1);
     --color-heading: var(--vt-c-text-light-1);
