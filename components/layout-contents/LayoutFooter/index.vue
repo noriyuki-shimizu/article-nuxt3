@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import GitHubIconSvg from '@/assets/svg/github-icon.svg?component'
+</script>
+
 <template>
   <footer :class="$style['footer']">
     <span>@ 2024 Noriyuki Shimizu</span>
