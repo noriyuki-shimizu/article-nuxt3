@@ -4,7 +4,7 @@ import SearchIconSvg from '@/assets/svg/search-icon.svg?component'
 
 /** Props */
 const props = withDefaults(defineProps<Props>(), {
-  placeholder: 'キーワード検索',
+  placeholder: 'タイトル検索',
   size: 'medium'
 })
 
