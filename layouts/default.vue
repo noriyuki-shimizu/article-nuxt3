@@ -1,9 +1,21 @@
 <script setup lang="ts">
 import GitHubIconSvg from '@/assets/svg/github-icon.svg?component'
+import InputSearch from '@/components/ui-parts/data-entry/input/InputSearch/index.vue'
+
+const searchText = ref<string>('')
 </script>
 
 <template>
   <div :class="$style['layout-container']">
+    <header :class="[$style['layout-container__header'], $style['header']]">
+      <NuxtLink to="/" :class="$style['header__link']">
+        <NuxtImg alt="main-icon" src="/img/main-icon.png" width="24" height="24" />
+        <h3 :class="$style['header__link-text']">
+          技術記事閲覧サイト
+        </h3>
+      </NuxtLink>
+      <InputSearch v-model="searchText" size="small" />
+    </header>
     <main :class="$style['layout-container__main']">
       <slot />
     </main>
@@ -20,7 +32,15 @@ import GitHubIconSvg from '@/assets/svg/github-icon.svg?component'
 <style module lang="scss">
 .layout-container {
     position: relative;
-    padding: 24px 24px 72px;
+    padding: 66px 24px 56px;
+
+    &__header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+    }
 
     &__main {
       z-index: 1;
@@ -35,10 +55,32 @@ import GitHubIconSvg from '@/assets/svg/github-icon.svg?component'
     }
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--color-background);
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+
+    &:visited {
+      color: var(--color-text);
+    }
+  }
+
+  &__link-text {
+    padding-left: 8px;
+  }
+}
+
 .footer {
     display: flex;
     justify-content: center;
-    padding: 24px;
+    padding: 16px;
     background-color: var(--color-background);
 
     &__link {
