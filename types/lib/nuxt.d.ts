@@ -1,6 +1,6 @@
 import type { Dayjs, ConfigType } from 'dayjs'
-import type { FetchRawParameters } from 'nitropack'
 import type { AppFetchResponse } from 'ofetch'
+import type { FetchRawParameters } from '@/types/core/http'
 
 declare module '#app' {
   interface NuxtApp {

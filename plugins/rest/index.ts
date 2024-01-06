@@ -1,6 +1,6 @@
-import type { FetchRawParameters } from 'nitropack'
 import type { AppFetchResponse } from 'ofetch'
 import { createFetchOptionWithInterceptors, generateRequestHashKey, convertAppFetchResponse } from './utils'
+import type { FetchRawParameters } from '@/types/core/http'
 
 /** Rest API 用の fetch 関数定義 */
 export default defineNuxtPlugin((nuxtApp) => {
