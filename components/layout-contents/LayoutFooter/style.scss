@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background-color: var(--color-background);
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+  }
+
+  &__link-text {
+    margin-left: 8px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--color-background);
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+
+    &:visited {
+      color: var(--color-text);
+    }
+  }
+
+  &__link-text {
+    padding-left: 8px;
+  }
+}
