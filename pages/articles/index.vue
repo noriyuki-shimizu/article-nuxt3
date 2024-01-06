@@ -3,6 +3,7 @@ import Container from '@/components/page-contents/articles/Container/index.vue'
 import { usePageApiStore } from '@/store/page/articles'
 
 definePageMeta({
+  layout: 'desktop-articles',
   middleware: [
     async () => {
       const nuxtApp = useNuxtApp()

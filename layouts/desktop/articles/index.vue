@@ -14,28 +14,5 @@ import LayoutFooter from '@/components/layout-contents/LayoutFooter/index.vue'
 </template>
 
 <style module lang="scss">
-.layout-container {
-    position: relative;
-    padding: 66px 24px 56px;
-
-    &__header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      width: 100%;
-    }
-
-    &__main {
-      z-index: 1;
-    }
-
-    &__footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
-      width: 100%;
-    }
-}
+@use './style.scss';
 </style>
