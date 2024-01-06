@@ -5,6 +5,9 @@ import { useCommonSearchUiStore } from '@/store/common/search'
 
 definePageMeta({
   layout: 'desktop-articles',
+  key (route) {
+    return route.fullPath
+  },
   middleware: [
     ({ query }) => {
       const nuxtApp = useNuxtApp()
