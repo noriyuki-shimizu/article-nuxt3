@@ -17,18 +17,22 @@
     height: 100%;
   }
 
-  &__link {
-    position: relative;
-    z-index: 1;
-  }
-
   &__header {
     display: flex;
     align-items: center;
   }
 
+  &__img {
+    border-radius: 50%;
+  }
+
   &__description {
     margin-left: 16px;
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
   }
 
   &__sub-text {
@@ -36,18 +40,18 @@
     font-size: 12px;
   }
 
-  &__img {
-    border-radius: 50%;
+  &__title {
+    margin-top: 8px;
   }
 
-  &__title {
-    margin: 16px 0;
+  &__footer {
+    margin-top: 8px;
+    font-size: 12px;
   }
 
   &__tag-list {
     display: flex;
     gap: 16px;
-    font-size: 12px;
     list-style: none;
   }
 
@@ -70,5 +74,21 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__number-text {
+    display: inline-block;
+    margin-left: 8px;
   }
 }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Props } from './types'
+import HeartIconSvg from '@/assets/svg/heart-icon.svg?component'
 
 /** Props */
 const props = defineProps<Props>()
@@ -11,7 +12,7 @@ const props = defineProps<Props>()
     <header :class="$style['list-item__header']">
       <NuxtImg
         :alt="props.article.userId"
-        :src="props.article.userProfileImageUrl || '/img/user-icon.png'"
+        :src="props.article.userProfileImageUrl"
         :class="$style['list-item__img']"
         height="32"
         width="32"
@@ -39,6 +40,10 @@ const props = defineProps<Props>()
           </li>
         </template>
       </ul>
+      <div :class="$style['list-item__number']">
+        <HeartIconSvg :class="$style['list-item__icon']" />
+        <span :class="$style['list-item__number-text']">{{ props.article.likesCount.toLocaleString() }}</span>
+      </div>
     </footer>
   </article>
 </template>
