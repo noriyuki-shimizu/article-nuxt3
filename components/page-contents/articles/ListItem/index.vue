@@ -9,7 +9,13 @@ const props = defineProps<Props>()
   <article :class="$style['list-item']">
     <NuxtLink :class="$style['list-item__link-bridge']" :to="props.article.url" target="_blank" :aria-label="`${props.article.title}へ遷移`" />
     <header :class="$style['list-item__header']">
-      <NuxtImg :alt="props.article.userId" :src="props.article.userProfileImageUrl" :class="$style['list-item__img']" height="32" width="32" />
+      <NuxtImg
+        :alt="props.article.userId"
+        :src="props.article.userProfileImageUrl || '/img/user-icon.png'"
+        :class="$style['list-item__img']"
+        height="32"
+        width="32"
+      />
       <div :class="$style['list-item__description']">
         <NuxtLink :to="`https://qiita.com/${props.article.userId}`" :class="$style['list-item__link']" target="_blank">
           @{{ props.article.userId }}

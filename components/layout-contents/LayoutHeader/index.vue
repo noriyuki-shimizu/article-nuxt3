@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import InputSearch from '@/components/ui-parts/data-entry/input/InputSearch/index.vue'
-
-const searchText = ref<string>('')
+import SearchForm from '@/components/projects/SearchForm/index.vue'
 </script>
 
 <template>
@@ -12,7 +10,7 @@ const searchText = ref<string>('')
         技術記事閲覧サイト
       </h3>
     </NuxtLink>
-    <InputSearch v-model="searchText" size="small" />
+    <SearchForm size="small" />
   </header>
 </template>
 

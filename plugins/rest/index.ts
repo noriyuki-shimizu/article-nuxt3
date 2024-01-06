@@ -37,6 +37,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         options?: FetchRawParameters<T>[1]
       ): Promise<AppFetchResponse<T>> => {
         const fetchOption = createFetchOptionWithInterceptors({
+          ...options,
           onRequest (context) {
             const { headers } = context.options
             context.options.headers = {

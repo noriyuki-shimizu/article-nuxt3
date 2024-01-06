@@ -26,9 +26,11 @@ export const usePageApiStore = () => {
   const actions = {
     /**
      * 記事一覧を取得し、レスポンスデータをView Modelに変換する
+     * @param {string} [keyword] -
+     * 「keyword」パラメータは、記事のフィルタリングに使用する検索語またはキーワードを表す文字列です。これはオプションのパラメーターであるため、キーワードが指定されていない場合、関数はフィルターをかけずにすべての記事を取得します。
      */
-    async fetchArticles (): Promise<void> {
-      const response = await getQiitaArticlesRequest({ sort: 'updated', page: 1 })
+    async fetchArticles (keyword: string): Promise<void> {
+      const response = await getQiitaArticlesRequest({ sort: 'created', page: 1, query: `title:${keyword}` })
       _state.value.qiitaArticles = convertApiResponseToViewModel(response._data)
     }
   }

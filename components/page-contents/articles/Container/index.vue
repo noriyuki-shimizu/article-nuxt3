@@ -16,7 +16,7 @@ const qiitaArticles = pageApiStore.qiitaArticles
         技術記事一覧
       </h1>
       <section :class="$style['body__list']">
-        <template v-if="LangUtil.isNull(qiitaArticles)">
+        <template v-if="LangUtil.isNull(qiitaArticles) || LangUtil.isEmpty(qiitaArticles)">
           <span>記事情報が見つかりませんでした。。。</span>
         </template>
         <template v-else>
