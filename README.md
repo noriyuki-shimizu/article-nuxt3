@@ -1,23 +1,14 @@
-# Nuxt 3 Minimal Starter
+# 技術記事閲覧サイト
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+https://github.com/noriyuki-shimizu/article-nuxt3/assets/31028330/64a634dd-110d-4c4b-86ef-feb431b1f447
+
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
@@ -25,17 +16,23 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
+```
 
-# pnpm
-pnpm run dev
+### Lint
 
-# yarn
-yarn dev
+Executing Lint:
 
-# bun
-bun run dev
+```bash
+npm run lint
+```
+
+### Format
+
+Perform file formatting:
+
+```bash
+npm run format
 ```
 
 ## Production
@@ -43,33 +40,11 @@ bun run dev
 Build the application for production:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
