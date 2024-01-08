@@ -1,0 +1,18 @@
+.spinner {
+  display: block;
+
+  &--small {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--defalut {
+    width: 24px;
+    height: 24px;
+  }
+
+  &--default {
+    width: 32px;
+    height: 32px;
+  }
+}

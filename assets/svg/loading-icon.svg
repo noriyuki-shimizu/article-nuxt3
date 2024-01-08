@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+    <path fill-opacity="0.1"
+          d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12,12-5.4,12-12S18.6,0,12,0m0,3c5,0,9,4,9,9s-4,9-9,9S3,17,3,12,7,3,12,3"/>
+    <path fill="currentColor" d="M12,0c6.6,0,12,5.4,12,12h-3c0-5-4-9-9-9V0Z">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite"
+                          from="0 12 12" to="360 12 12" dur="1.2s"/>
+    </path>
+</svg>
