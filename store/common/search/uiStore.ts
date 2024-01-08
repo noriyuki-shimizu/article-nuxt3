@@ -21,9 +21,9 @@ export const useCommonSearchUiStore = () => {
   const actions = {
     /**
      * 状態に検索キーワードを設定します。
-     * @param {string} keyword - キーワードパラメータは、検索に使用される検索キーワードを表す文字列です。
+     * @param {string | null} keyword - キーワードパラメータは、検索に使用される検索キーワードを表す文字列です。
      */
-    setSearchKeyword (keyword: string): void {
+    setSearchKeyword (keyword: string | null): void {
       _state.value.searchKeyword = keyword
     }
   }

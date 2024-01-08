@@ -15,11 +15,9 @@ definePageMeta({
         return
       }
 
+      const commonSearchUiStore = useCommonSearchUiStore()
       const queryValue = RouteUtil.convertLocationQueryToValue(query)
-      if ('q' in queryValue) {
-        const commonSearchUiStore = useCommonSearchUiStore()
-        commonSearchUiStore.setSearchKeyword(queryValue.q)
-      }
+      commonSearchUiStore.setSearchKeyword('q' in queryValue ? queryValue.q : null)
     },
     async () => {
       const nuxtApp = useNuxtApp()
