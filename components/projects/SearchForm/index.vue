@@ -4,6 +4,8 @@ import type { Props } from './types'
 import InputSearch from '@/components/ui-parts/data-entry/input/InputSearch/index.vue'
 import { useCommonSearchUiStore } from '@/store/common/search'
 
+preloadRouteComponents('/articles')
+
 /** Props */
 const props = withDefaults(defineProps<Props>(), {
   size: 'medium'
