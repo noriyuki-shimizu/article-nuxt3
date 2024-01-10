@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ErrorProps } from '@/types/core/errorPage'
-import { STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_BAD_REQUEST } from '@/constants/http/statusCode'
+import { STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_BAD_REQUEST } from '@/constants/common/http/statusCode'
 
 /** Props */
 const props = defineProps<ErrorProps>()

@@ -1,7 +1,7 @@
 import type { NuxtError } from '#app'
 import { FetchError } from 'ofetch'
 import { isString, isObject } from './lang'
-import { STATUS_CODE_INTERNAL_SERVER_ERROR } from '@/constants/http/statusCode'
+import { STATUS_CODE_INTERNAL_SERVER_ERROR } from '@/constants/common/http/statusCode'
 
 /**
  * エラーを Nuxt エラーデータに変換
