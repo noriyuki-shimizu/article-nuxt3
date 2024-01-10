@@ -1,6 +1,26 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
+  ],
+  "dependencyDashboard": false,
+  "timezone": "Asia/Tokyo",
+  "schedule": ["after 8am on monday", "before 10am on monday"],
+  "addLabels": ["renovate"],
+  "reviewers": ["noriyuki-shimizu"],
+  "ignoreDeps": ["node", "npm"],
+  "major": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["/eslint/"],
+      "groupName": "eslint"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["/stylelint/"],
+      "groupName": "stylelint"
+    }
   ]
 }
