@@ -1,26 +1,19 @@
-import { createConsola } from 'consola'
+// MEMO: consola パッケージは nuxi や @nuxt/kit に依存しているパッケージのため、そのパッケージを import して使用している
+import { createConsola, LogLevels } from 'consola'
 import type { ConsolaInstance } from 'consola'
 
-/** Logger instance */
+/** Logger */
 const logger = createConsola({
-  level: process.env.NODE_ENV === 'production' ? 3 : 5,
-  formatOptions: {
-    columns: 80,
-    colors: false,
-    compact: true,
-    date: true
-  }
+  level: process.env.NODE_ENV === 'production' ? LogLevels.info : LogLevels.trace
 })
 
 /**
- * `useLogger` 関数は、オプションのタグを持つロガー インスタンスを返します。
- * @param {string} [tag] - `tag`
- * パラメータは、ロギングに使用されるタグを表すオプションの文字列です。指定した場合、ロガーは指定されたタグで構成されます。指定されない場合、または空の文字列の場合、ロガーはタグ設定なしでそのまま返されます。
- * @returns `ConsolaInstance` オブジェクト。
+ * オプションのタグを持つ Logger インスタンスを返す
+ * @param {string} [tag] -
+ * ロギングに使用されるタグを表すオプションの文字列.
+ * 指定した場合、Logger はこのタグで構成され、特定のコンポーネントまたはモジュールに関連するログメッセージを簡単に識別できるようになる.
+ * @returns Logger インスタンス
  */
 export const useLogger = (tag?: string): ConsolaInstance => {
-  if (LangUtil.isUndefined(tag) || LangUtil.isEmpty(tag)) {
-    return logger
-  }
-  return logger.withTag(tag)
+  return LangUtil.isUndefined(tag) || tag.trim() === '' ? logger : logger.withTag(tag)
 }
