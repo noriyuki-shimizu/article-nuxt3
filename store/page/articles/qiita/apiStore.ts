@@ -1,25 +1,21 @@
-import type { ApiState, QiitaArticleViewModel, ZennArticleViewModel } from './types'
+import type { ApiState, QiitaArticleViewModel } from './types'
 import { getRequest as getQiitaArticlesRequest } from '@/infrastructures/rest/qiita.com/api/v2/items'
 import { convertApiResponseToViewModel } from '@/functions/business/qiita-article/convert'
 
 /**
- * 記事一覧ページにおける Page API Store
+ * Qiita 記事一覧ページにおける Page API Store
  * @returns Page API Store
  */
 export const usePageApiStore = () => {
-  const _state = useState<ApiState>('page-api-articles-store', () => {
+  const _state = useState<ApiState>('page-api-articles-qiita-store', () => {
     return {
-      zennArticles: null,
-      qiitaArticles: null
+      articles: null
     }
   })
 
   const getters = {
-    zennArticles: computed<ZennArticleViewModel[] | null>(() => {
-      return _state.value.zennArticles
-    }),
-    qiitaArticles: computed<QiitaArticleViewModel[] | null>(() => {
-      return _state.value.qiitaArticles
+    articles: computed<QiitaArticleViewModel[] | null>(() => {
+      return _state.value.articles
     })
   }
 
@@ -31,7 +27,8 @@ export const usePageApiStore = () => {
      */
     async fetchArticles (keyword: string): Promise<void> {
       const response = await getQiitaArticlesRequest({ sort: 'created', page: 1, query: `title:${keyword}` })
-      _state.value.qiitaArticles = convertApiResponseToViewModel(response._data)
+
+      _state.value.articles = convertApiResponseToViewModel(response._data)
     }
   }
 

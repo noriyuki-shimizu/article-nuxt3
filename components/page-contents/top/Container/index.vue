@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import SearchForm from '@/components/projects/SearchForm/index.vue'
-</script>
-
 <template>
   <div :class="$style['top-container']">
     <div :class="$style['body']">
@@ -10,15 +6,16 @@ import SearchForm from '@/components/projects/SearchForm/index.vue'
       </h1>
       <ul :class="$style['body__link-list']">
         <li :class="$style['body__link-item']">
-          Zenn の記事一覧を見る（現在は閲覧できません）
+          <NuxtLink to="/articles/zenn" prefetch>
+            Zenn Tech の記事一覧を見る
+          </NuxtLink>
         </li>
         <li :class="$style['body__link-item']">
-          <NuxtLink to="/articles" prefetch>
+          <NuxtLink to="/articles/qiita" prefetch>
             Qiita の記事一覧を見る
           </NuxtLink>
         </li>
       </ul>
-      <SearchForm :class="$style['body__search-form']" />
     </div>
   </div>
 </template>

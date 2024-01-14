@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BookIconSvg from '@/assets/svg/book-icon.svg?component'
+import SearchForm from '@/components/projects/SearchForm/index.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import BookIconSvg from '@/assets/svg/book-icon.svg?component'
         技術記事閲覧サイト
       </h3>
     </NuxtLink>
+    <SearchForm size="small" />
   </header>
 </template>
 

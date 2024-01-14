@@ -4,7 +4,7 @@ import type { Props } from './types'
 import InputSearch from '@/components/ui-parts/data-entry/input/InputSearch/index.vue'
 import { useCommonSearchUiStore } from '@/store/common/search'
 
-preloadRouteComponents('/articles')
+preloadRouteComponents('/articles/qiita')
 
 /** Props */
 const props = withDefaults(defineProps<Props>(), {
@@ -38,7 +38,7 @@ const onSearch = async (): Promise<void> => {
   )
 
   await navigateTo({
-    path: '/articles',
+    path: '/articles/qiita',
     query
   })
 }

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Container from '@/components/page-contents/articles/Container/index.vue'
-import { usePageApiStore } from '@/store/page/articles'
+import Container from '@/components/page-contents/articles/zenn/Container/index.vue'
+import { usePageApiStore } from '@/store/page/articles/zenn'
 import { useCommonSearchUiStore } from '@/store/common/search'
 
 definePageMeta({
-  layout: 'desktop-articles',
+  layout: 'desktop-articles-zenn',
   key (route) {
     return route.fullPath
   },
@@ -26,9 +26,8 @@ definePageMeta({
       }
 
       try {
-        const commonSearchUiStore = useCommonSearchUiStore()
         const pageApiStore = usePageApiStore()
-        await pageApiStore.fetchArticles(commonSearchUiStore.searchKeyword.value || '')
+        await pageApiStore.fetchArticles()
       } catch (err) {
         return nuxtApp.runWithContext(() => {
           const nuxtError = ErrorUtil.convertNuxtError(err)
@@ -40,8 +39,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: '技術記事一覧',
-  description: '技術に関する記事を一覧で閲覧できます。'
+  title: 'Zenn Tech 記事一覧',
+  description: 'Zenn Tech に関する記事を一覧で閲覧できます。'
 })
 </script>
 

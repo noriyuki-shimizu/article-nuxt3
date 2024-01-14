@@ -1,4 +1,4 @@
-import type { QiitaArticleViewModel } from '@/store/page/articles'
+import type { QiitaArticleViewModel } from '@/store/page/articles/qiita'
 
 /** Props */
 export type Props = {

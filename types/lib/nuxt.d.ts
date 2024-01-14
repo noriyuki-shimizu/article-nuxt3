@@ -4,8 +4,8 @@ import type { FetchRawParameters } from '@/types/core/http'
 
 declare module '#app' {
   interface NuxtApp {
-    /** Zenn API 用の Http Client 関数 */
-    $zennHttpClient: <T = object>(
+    /** Nuxt Server API 用の Http Client 関数 */
+    $nuxtServerHttpClient: <T = object>(
       request: FetchRawParameters<T>[0],
       options?: FetchRawParameters<T>[1]
     ) => Promise<AppFetchResponse<T>>
@@ -19,8 +19,8 @@ declare module '#app' {
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    /** Zenn API 用の Http Client 関数 */
-    $zennHttpClient: <T = object>(
+    /** Nuxt Server API 用の Http Client 関数 */
+    $nuxtServerHttpClient: <T = object>(
       request: FetchRawParameters<T>[0],
       options?: FetchRawParameters<T>[1]
     ) => Promise<AppFetchResponse<T>>
