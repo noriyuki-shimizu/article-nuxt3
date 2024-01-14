@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Props } from './types'
 import HeartIconSvg from '@/assets/svg/heart-icon.svg?component'
+import ListDetail from '@/components/ui-parts/data-display/ListDetail/index.vue'
 
 /** Props */
 const props = defineProps<Props>()
@@ -13,8 +14,8 @@ const props = defineProps<Props>()
       <div :class="$style['list-item__left-aside']">
         {{ props.article.emoji }}
       </div>
-      <div>
-        <header :class="$style['list-item__header']">
+      <ListDetail>
+        <template #header>
           <NuxtImg
             :alt="props.article.userName"
             :src="props.article.userAvatarUrl"
@@ -34,17 +35,17 @@ const props = defineProps<Props>()
             </NuxtLink>
             <span :class="$style['list-item__sub-text']">作成日: {{ props.article.publishedAt }}</span>
           </div>
-        </header>
-        <h2 :class="$style['list-item__title']">
+        </template>
+        <template #title>
           {{ props.article.title }}
-        </h2>
-        <footer :class="$style['list-item__footer']">
+        </template>
+        <template #footer>
           <div :class="$style['list-item__number']">
             <HeartIconSvg :class="$style['list-item__icon']" />
             <span :class="$style['list-item__number-text']">{{ props.article.likedCount.toLocaleString() }}</span>
           </div>
-        </footer>
-      </div>
+        </template>
+      </ListDetail>
     </div>
   </article>
 </template>

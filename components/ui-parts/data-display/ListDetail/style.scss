@@ -1,0 +1,15 @@
+.list-item {
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin-top: 8px;
+  }
+
+  &__footer {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}

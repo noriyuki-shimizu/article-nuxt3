@@ -60,33 +60,6 @@
     font-size: 12px;
   }
 
-  &__tag-list {
-    display: flex;
-    gap: 16px;
-    list-style: none;
-  }
-
-  &__tag-item {
-    position: relative;
-    z-index: 1;
-    padding: 4px 8px;
-    background-color: var(--color-background-tag);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-
-    &:hover {
-      background-color: var(--color-background-tag-hover);
-    }
-  }
-
-  &__tag-link {
-    color: var(--color-text);
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
   &__number {
     display: flex;
     align-items: center;
