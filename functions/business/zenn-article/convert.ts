@@ -1,5 +1,7 @@
-import type { ZennArticleResponse } from '@/infrastructures/rest/zenn.dev/api/articles'
-import type { ZennArticleViewModel } from '@/store/page/articles'
+import dayjs from 'dayjs'
+import type { ZennArticleResponse } from '@/infrastructures/rest/nuxt-server/api/zenn/articles'
+import type { ZennArticleViewModel } from '@/store/page/articles/zenn'
+import { DATE_YYYYMMDD_JP } from '@/constants/business/date/template'
 
 /**
  * 関数 `convertApiResponseToViewModel` は API 応答オブジェクトを受け取り、それを Zenn 記事のビュー モデル オブジェクトの配列に変換します。
@@ -21,10 +23,12 @@ export const convertApiResponseToViewModel = (response: ZennArticleResponse | un
       articleType: article.articleType,
       emoji: article.emoji,
       path: article.path,
-      publishedAt: article.publishedAt,
-      bodyUpdatedAt: article.bodyUpdatedAt,
+      publishedAt: dayjs(article.publishedAt).format(DATE_YYYYMMDD_JP),
+      bodyUpdatedAt: dayjs(article.bodyUpdatedAt).format(DATE_YYYYMMDD_JP),
       userId: article.user.id,
-      userName: article.user.name
+      userName: article.user.username,
+      userDisplayName: article.user.name,
+      userAvatarUrl: article.user.avatarSmallUrl
     }
   })
 }

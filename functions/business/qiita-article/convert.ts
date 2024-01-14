@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import type { QiitaArticleResponse } from '@/infrastructures/rest/qiita.com/api/v2/items'
-import type { QiitaArticleViewModel } from '@/store/page/articles'
+import type { QiitaArticleViewModel } from '@/store/page/articles/qiita'
 import { DATE_YYYYMMDD_JP } from '@/constants/business/date/template'
 
 /**

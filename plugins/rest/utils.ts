@@ -7,7 +7,7 @@ import { SHORT_HASH_LENGTH } from './constants'
  * Client API でのヘッダー取得
  * @returns ヘッダー情報
  */
-const getClientApiHeader = (): HeadersInit => {
+const getCommonApiHeader = (): HeadersInit => {
   const headers: HeadersInit = {}
 
   if (process.server) {
@@ -41,15 +41,13 @@ export const createFetchOptionWithInterceptors = <
       options?.onRequest?.call(this, context)
 
       const { headers } = context.options
-      const clientApiHeader = getClientApiHeader()
-      if (!LangUtil.isEmpty(clientApiHeader)) {
-        context.options.headers = { ...headers, ...clientApiHeader }
+      const commonApiHeader = getCommonApiHeader()
+      if (!LangUtil.isEmpty(commonApiHeader)) {
+        context.options.headers = { ...headers, ...commonApiHeader }
       }
     },
     onRequestError (context) {
       options?.onRequestError?.call(this, context)
-
-      throw context.error
     },
     onResponse (context) {
       options?.onResponse?.call(this, context)
@@ -59,8 +57,6 @@ export const createFetchOptionWithInterceptors = <
     },
     onResponseError (context) {
       options?.onResponseError?.call(this, context)
-
-      throw context.error
     }
   }
 }
@@ -88,10 +84,10 @@ export const generateRequestHashKey = async (
 export const convertAppFetchResponse = <T>(
   response: FetchResponse<T>
 ): AppFetchResponse<T> => {
-  const headers: Record<string, string> = {}
-  for (const [key, value] of response.headers.entries()) {
-    Object.assign(headers, { [key]: value })
-  }
+  const headers: Record<string, string> = Array.from(response.headers.entries()).reduce((a, c) => {
+    const [key, value] = c
+    return Object.assign(a, { [key]: value })
+  }, {})
   return {
     _data: response._data,
     headers,

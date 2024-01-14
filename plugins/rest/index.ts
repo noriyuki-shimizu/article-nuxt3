@@ -1,14 +1,20 @@
-import type { AppFetchResponse } from 'ofetch'
+import type { AppFetchResponse, FetchResponse } from 'ofetch'
 import { createFetchOptionWithInterceptors, generateRequestHashKey, convertAppFetchResponse } from './utils'
 import type { FetchRawParameters } from '@/types/core/http'
 
 /** Rest API 用の fetch 関数定義 */
 export default defineNuxtPlugin((nuxtApp) => {
+  /** Runtime Config */
   const config = useRuntimeConfig()
+
+  /** Qiita Base Fetch Object */
+  const baseQiitaFetch = $fetch.create({
+    baseURL: 'https://qiita.com'
+  })
 
   return {
     provide: {
-      zennHttpClient: async <T = object>(
+      nuxtServerHttpClient: async <T = object>(
         request: FetchRawParameters<T>[0],
         options?: FetchRawParameters<T>[1]
       ): Promise<AppFetchResponse<T>> => {
@@ -21,7 +27,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             const cached = useState<AppFetchResponse<T> | null>(requestHashKey, () => null)
 
             if (LangUtil.isNull(cached.value)) {
-              const response = await $fetch.raw<T>(request, fetchOption)
+              const response = await $fetch.raw<T>(request, fetchOption) as FetchResponse<T>
               cached.value = convertAppFetchResponse(response)
             }
 
@@ -29,7 +35,7 @@ export default defineNuxtPlugin((nuxtApp) => {
           })
         }
 
-        const response = await $fetch.raw<T>(request, fetchOption)
+        const response = await $fetch.raw<T>(request, fetchOption) as FetchResponse<T>
         return convertAppFetchResponse(response)
       },
       qiitaHttpClient: async <T = object>(
@@ -54,7 +60,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             const cached = useState<AppFetchResponse<T> | null>(requestHashKey, () => null)
 
             if (LangUtil.isNull(cached.value)) {
-              const response = await $fetch.raw<T>(request, fetchOption)
+              const response = await baseQiitaFetch.raw<T>(request, fetchOption) as FetchResponse<T>
               cached.value = convertAppFetchResponse(response)
             }
 
@@ -62,7 +68,7 @@ export default defineNuxtPlugin((nuxtApp) => {
           })
         }
 
-        const response = await $fetch.raw<T>(request, fetchOption)
+        const response = await baseQiitaFetch.raw<T>(request, fetchOption) as FetchResponse<T>
         return convertAppFetchResponse(response)
       }
     }

@@ -4,8 +4,12 @@ import viteSvgLoader from 'vite-svg-loader'
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
+  nitro: {
+    plugins: ['plugins/runtime-hook/index.ts']
+  },
   runtimeConfig: {
     public: {
+      pageBaseUrl: '',
       qiitaAccessToken: ''
     }
   },

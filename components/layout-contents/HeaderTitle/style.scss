@@ -1,0 +1,19 @@
+.header-title {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+
+  &:visited {
+    color: var(--color-text);
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-main);
+  }
+
+  &__link-text {
+    padding-left: 8px;
+  }
+}
