@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ListItem from '../ListItem/index.vue'
+import Empty from '@/components/ui-parts/data-display/Empty/index.vue'
 import { usePageApiStore } from '@/store/page/articles/qiita'
 
 /** Page API Store */
@@ -17,7 +18,7 @@ const articles = pageApiStore.articles
       </h1>
       <section :class="$style['body__list']">
         <template v-if="LangUtil.isNull(articles) || LangUtil.isEmpty(articles)">
-          <span>記事情報が見つかりませんでした。。。</span>
+          <Empty />
         </template>
         <template v-else>
           <template v-for="article in articles" :key="article.id">
