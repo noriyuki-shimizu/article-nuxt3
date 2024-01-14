@@ -14,6 +14,9 @@ const props = defineProps<Props>()
         :alt="props.article.userId"
         :src="props.article.userProfileImageUrl"
         :class="$style['list-item__img']"
+        ismap
+        decoding="auto"
+        loading="lazy"
         height="32"
         width="32"
       />
