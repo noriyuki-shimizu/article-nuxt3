@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ErrorProps } from '@/types/core/errorPage'
-import { STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_BAD_REQUEST } from '@/constants/common/http/statusCode'
+import { STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_BAD_REQUEST, STATUS_CODE_NOT_FOUND } from '@/constants/common/http/statusCode'
 
 /** Props */
 const props = defineProps<ErrorProps>()
@@ -31,10 +31,19 @@ useHeadSafe({
 <template>
   <NuxtLayout>
     <template v-if="props.error.statusCode === STATUS_CODE_INTERNAL_SERVER_ERROR">
-      <h2>致命的エラーが発生しました。</h2>
+      <h2 :class="$style['error-title']">
+        致命的エラーが発生しました。
+      </h2>
     </template>
     <template v-else-if="props.error.statusCode === STATUS_CODE_BAD_REQUEST">
-      <h2>入力内容に誤りがあります。お手数ですが、もう一度入力内容の確認をお願いします。</h2>
+      <h2 :class="$style['error-title']">
+        入力内容に誤りがあります。お手数ですが、もう一度入力内容の確認をお願いします。
+      </h2>
+    </template>
+    <template v-else-if="props.error.statusCode === STATUS_CODE_NOT_FOUND">
+      <h2 :class="$style['error-title']">
+        お探しのページが見つかりませんでした。
+      </h2>
     </template>
 
     <template v-if="isDevelopment()">
@@ -43,17 +52,25 @@ useHeadSafe({
       </div>
     </template>
 
-    <NuxtLink to="/" @click="handleError">
+    <NuxtLink to="/" :class="$style['error-link']" @click="handleError">
       トップページへ
     </NuxtLink>
   </NuxtLayout>
 </template>
 
 <style module lang="scss">
+.error-title {
+  margin-bottom: 24px;
+}
+
 .error-detail {
   padding: 16px;
-  margin: 24px 0;
   background-color: var(--color-background-snippet);
   border-radius: 8px;
+}
+
+.error-link {
+  display: block;
+  margin-top: 24px;
 }
 </style>
