@@ -28,11 +28,6 @@
     font-size: 40px;
   }
 
-  &__header {
-    display: flex;
-    align-items: center;
-  }
-
   &__img {
     border-radius: 50%;
   }
@@ -48,15 +43,6 @@
 
   &__sub-text {
     display: block;
-    font-size: 12px;
-  }
-
-  &__title {
-    margin-top: 8px;
-  }
-
-  &__footer {
-    margin-top: 8px;
     font-size: 12px;
   }
 
