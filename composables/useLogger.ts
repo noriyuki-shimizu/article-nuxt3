@@ -1,11 +1,6 @@
 // MEMO: consola パッケージは nuxi や @nuxt/kit に依存しているパッケージのため、そのパッケージを import して使用している
-import { createConsola, LogLevels } from 'consola'
+import { consola } from 'consola'
 import type { ConsolaInstance } from 'consola'
-
-/** Logger */
-const logger = createConsola({
-  level: process.env.NODE_ENV === 'production' ? LogLevels.info : LogLevels.trace
-})
 
 /**
  * オプションのタグを持つ Logger インスタンスを返す
@@ -15,5 +10,7 @@ const logger = createConsola({
  * @returns Logger インスタンス
  */
 export const useLogger = (tag?: string): ConsolaInstance => {
-  return LangUtil.isUndefined(tag) || tag.trim() === '' ? logger : logger.withTag(tag)
+  const config = useRuntimeConfig()
+  consola.level = config.public.logLevel
+  return LangUtil.isUndefined(tag) || tag.trim() === '' ? consola : consola.withTag(tag)
 }
