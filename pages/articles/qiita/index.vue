@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Container from '@/components/page-contents/articles/qiita/Container/index.vue'
-import { usePageApiStore } from '@/store/page/articles/qiita'
-import { useCommonSearchUiStore } from '@/store/common/search'
+import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
 
 definePageMeta({
   layout: 'desktop-articles-qiita',
@@ -15,9 +14,9 @@ definePageMeta({
         return
       }
 
-      const commonSearchUiStore = useCommonSearchUiStore()
+      const pageUiStore = usePageUiStore()
       const queryValue = RouteUtil.convertLocationQueryToValue(query)
-      commonSearchUiStore.setSearchKeyword('q' in queryValue ? queryValue.q : null)
+      pageUiStore.setSearchKeyword('q' in queryValue ? queryValue.q : null)
     },
     async () => {
       const nuxtApp = useNuxtApp()
@@ -26,9 +25,9 @@ definePageMeta({
       }
 
       try {
-        const commonSearchUiStore = useCommonSearchUiStore()
+        const pageUiStore = usePageUiStore()
         const pageApiStore = usePageApiStore()
-        await pageApiStore.fetchArticles(commonSearchUiStore.searchKeyword.value || '')
+        await pageApiStore.fetchArticles(pageUiStore.searchKeyword.value || '')
       } catch (err) {
         return nuxtApp.runWithContext(() => {
           const nuxtError = ErrorUtil.convertNuxtError(err)

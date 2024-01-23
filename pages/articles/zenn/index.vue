@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Container from '@/components/page-contents/articles/zenn/Container/index.vue'
 import { usePageApiStore } from '@/store/page/articles/zenn'
-import { useCommonSearchUiStore } from '@/store/common/search'
 
 definePageMeta({
   layout: 'desktop-articles-zenn',
@@ -9,16 +8,6 @@ definePageMeta({
     return route.fullPath
   },
   middleware: [
-    ({ query }) => {
-      const nuxtApp = useNuxtApp()
-      if (nuxtApp.isHydrating) {
-        return
-      }
-
-      const commonSearchUiStore = useCommonSearchUiStore()
-      const queryValue = RouteUtil.convertLocationQueryToValue(query)
-      commonSearchUiStore.setSearchKeyword('q' in queryValue ? queryValue.q : null)
-    },
     async () => {
       const nuxtApp = useNuxtApp()
       if (nuxtApp.isHydrating) {

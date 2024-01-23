@@ -1,11 +1,11 @@
 import type { UiState } from './types'
 
 /**
- * 検索キーワードにおける UI Store
+ * Qiita 記事一覧ページにおける Page UI Store
  * @returns UI Store
  */
-export const useCommonSearchUiStore = () => {
-  const _state = useState<UiState>('common-search-ui-store', () => {
+export const usePageUiStore = () => {
+  const _state = useState<UiState>('page-ui-articles-qiita-store', () => {
     return {
       searchKeyword: null
     }

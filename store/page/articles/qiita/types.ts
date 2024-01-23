@@ -14,3 +14,9 @@ export type ApiState = {
     /** 記事データにおける View Model */
     articles: QiitaArticleViewModel[] | null
 }
+
+/** UI State */
+export type UiState = {
+    /** 検索キーワード */
+    searchKeyword: string | null
+}

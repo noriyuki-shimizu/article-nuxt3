@@ -2,7 +2,7 @@
 import type { LocationQueryRaw } from 'vue-router'
 import type { Props } from './types'
 import InputSearch from '@/components/ui-parts/data-entry/input/InputSearch/index.vue'
-import { useCommonSearchUiStore } from '@/store/common/search'
+import { usePageUiStore } from '@/store/page/articles/qiita'
 
 preloadRouteComponents('/articles/qiita')
 
@@ -12,17 +12,17 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 /** Common Search UI Store */
-const commonSearchUiStore = useCommonSearchUiStore()
+const uiStore = usePageUiStore()
 
 /** 検索キーワード */
-const searchKeyword = commonSearchUiStore.searchKeyword
+const searchKeyword = uiStore.searchKeyword
 
 /**
  * 状態に検索キーワードを設定します。
  * @param {string} keyword - キーワードパラメータは、検索に使用される検索キーワードを表す文字列です。
  */
 const setSearchKeyword = (keyword: string): void => {
-  commonSearchUiStore.setSearchKeyword(keyword.trim())
+  uiStore.setSearchKeyword(keyword.trim())
 }
 
 /**
@@ -30,10 +30,10 @@ const setSearchKeyword = (keyword: string): void => {
  */
 const onSearch = async (): Promise<void> => {
   const query: LocationQueryRaw = RouteUtil.convertLocationQuery(
-    LangUtil.isNull(commonSearchUiStore.searchKeyword.value)
+    LangUtil.isNull(uiStore.searchKeyword.value)
       ? {}
       : {
-          q: commonSearchUiStore.searchKeyword.value
+          q: uiStore.searchKeyword.value
         }
   )
 
