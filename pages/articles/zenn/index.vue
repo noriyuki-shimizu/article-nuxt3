@@ -2,6 +2,12 @@
 import Container from '@/components/page-contents/articles/zenn/Container/index.vue'
 import { usePageApiStore } from '@/store/page/articles/zenn'
 
+/** Runtime Config */
+const config = useRuntimeConfig()
+
+/** API Store */
+const pageApiStore = usePageApiStore()
+
 definePageMeta({
   layout: 'desktop-articles-zenn',
   key (route) {
@@ -30,6 +36,23 @@ definePageMeta({
 useSeoMeta({
   title: 'Zenn Tech 記事一覧',
   description: 'Zenn Tech に関する記事を一覧で閲覧できます。'
+})
+
+useHead(() => {
+  const articles = pageApiStore.articles.value
+  if (LangUtil.isEmpty(articles)) {
+    return {
+      meta: [{ name: 'robots', content: 'noindex' }]
+    }
+  }
+  return {
+    link: [
+      {
+        rel: 'canonical',
+        href: `${config.public.pageBaseUrl}/zenn`
+      }
+    ]
+  }
 })
 </script>
 

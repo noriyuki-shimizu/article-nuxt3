@@ -2,6 +2,12 @@
 import Container from '@/components/page-contents/articles/qiita/Container/index.vue'
 import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
 
+/** Runtime Config */
+const config = useRuntimeConfig()
+
+/** API Store */
+const pageApiStore = usePageApiStore()
+
 definePageMeta({
   layout: 'desktop-articles-qiita',
   key (route) {
@@ -41,6 +47,23 @@ definePageMeta({
 useSeoMeta({
   title: 'Qiita 記事一覧',
   description: 'Qiita に関する記事を一覧で閲覧できます。'
+})
+
+useHead(() => {
+  const articles = pageApiStore.articles.value
+  if (LangUtil.isEmpty(articles)) {
+    return {
+      meta: [{ name: 'robots', content: 'noindex' }]
+    }
+  }
+  return {
+    link: [
+      {
+        rel: 'canonical',
+        href: `${config.public.pageBaseUrl}/qiita`
+      }
+    ]
+  }
 })
 </script>
 

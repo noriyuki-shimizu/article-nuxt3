@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Container from '@/components/page-contents/top/Container/index.vue'
 
+/** Runtime Config */
+const config = useRuntimeConfig()
+
 definePageMeta({
   layout: 'desktop-top'
 })
@@ -8,6 +11,15 @@ definePageMeta({
 useSeoMeta({
   title: '技術記事閲覧サイト',
   description: '技術に関する記事を一覧で閲覧できるサイトです。'
+})
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: config.public.pageBaseUrl
+    }
+  ]
 })
 </script>
 

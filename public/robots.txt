@@ -1,3 +1,5 @@
+Sitemap: https://shiminori-tec-articles.onrender.com/sitemap.xml
+
 User-Agent: *
 Disallow:
 Disallow: /cgi-bin/
