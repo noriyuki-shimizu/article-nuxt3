@@ -1,13 +1,8 @@
-import { useLogger } from 'nuxt/kit'
-
+/**
+ * ランタイムフックプラグイン
+ */
 export default defineNitroPlugin((nitroApp) => {
   const config = useRuntimeConfig()
-  const logger = useLogger()
-
-  // アプリケーションエラーの発生時にフックされる
-  nitroApp.hooks.hook('error', (error, { event }) => {
-    logger.error(`[path: ${event?.path || 'none'}] Application error:`, error)
-  })
 
   // リクエスト前にフックされる
   nitroApp.hooks.hook('beforeResponse', (event) => {
@@ -16,5 +11,10 @@ export default defineNitroPlugin((nitroApp) => {
         .setHeader('Access-Control-Allow-Origin', config.public.pageBaseUrl)
         .setHeader('Access-Control-Allow-Methods', '*')
     }
+  })
+
+  // SSR 時にフックされる
+  nitroApp.hooks.hook('render:response', (_, { event }) => {
+    event.node.res.setHeader('X-Frame-Options', 'DENY')
   })
 })
