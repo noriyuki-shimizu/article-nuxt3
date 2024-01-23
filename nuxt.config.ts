@@ -21,7 +21,10 @@ export default defineNuxtConfig({
       }
     }
   },
-  plugins: ['~/plugins/rest/index.ts'],
+  plugins: [
+    '@/plugins/rest/nuxtServerHttpClient.ts',
+    '@/plugins/rest/qiitaHttpClient.ts'
+  ],
   modules: ['@nuxt/image'],
   imports: {
     dirs: [
