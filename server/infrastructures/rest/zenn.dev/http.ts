@@ -1,6 +1,6 @@
 import type { AppFetchResponse, FetchResponse } from 'ofetch'
-import type { FetchRawParameters } from '@/types/core/http'
 import { convertAppFetchResponse } from '@/server/functions/business/http/rest'
+import type { FetchRawParameters } from '@/types/core/http'
 
 /**
  * Zenn API 用の fetch 関数

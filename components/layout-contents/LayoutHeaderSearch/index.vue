@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import HeaderTitle from '../HeaderTitle/index.vue'
 import LayoutHeaderCommon from '../LayoutHeaderCommon/index.vue'
 import SearchForm from '../QiitaSearchForm/index.vue'
-import HeaderTitle from '../HeaderTitle/index.vue'
 </script>
 
 <template>

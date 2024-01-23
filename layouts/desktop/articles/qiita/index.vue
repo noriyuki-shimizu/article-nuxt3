@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import LayoutHeaderSearch from '@/components/layout-contents/LayoutHeaderSearch/index.vue'
 import LayoutFooter from '@/components/layout-contents/LayoutFooter/index.vue'
+import LayoutHeaderSearch from '@/components/layout-contents/LayoutHeaderSearch/index.vue'
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 import camelcaseKeys from 'camelcase-keys'
-import snakecaseKeys from 'snakecase-keys'
 import type { NitroFetchRequest, $Fetch } from 'nitropack'
 import type { AppFetchResponse, FetchResponse } from 'ofetch'
+import snakecaseKeys from 'snakecase-keys'
 import { SHORT_HASH_LENGTH } from '@/constants/common/hash'
 import type { FetchRawParameters } from '@/types/core/http'
 

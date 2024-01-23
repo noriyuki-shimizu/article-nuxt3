@@ -1,6 +1,6 @@
 import type { ApiState, QiitaArticleViewModel } from './types'
-import { getRequest as getQiitaArticlesRequest } from '@/infrastructures/rest/qiita.com/api/v2/items'
 import { convertApiResponseToViewModel } from '@/functions/business/qiita-article/convert'
+import { getRequest as getQiitaArticlesRequest } from '@/infrastructures/rest/qiita.com/api/v2/items'
 
 /**
  * Qiita 記事一覧ページにおける Page API Store

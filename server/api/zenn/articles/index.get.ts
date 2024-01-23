@@ -1,7 +1,7 @@
 import { STATUS_CODE_OK, STATUS_CODE_NO_CONTENT } from '@/constants/common/http/statusCode'
-import type { ZennArticleApiRequestQuery } from '@/server/types/business/zenn/articles/http'
 import { getRequest } from '@/server/infrastructures/rest/zenn.dev/api/articles'
 import type { ZennArticleRequestQuery } from '@/server/infrastructures/rest/zenn.dev/api/articles'
+import type { ZennArticleApiRequestQuery } from '@/server/types/business/zenn/articles/http'
 import { ErrorUtil, LangUtil } from '@/utils/core'
 
 /**

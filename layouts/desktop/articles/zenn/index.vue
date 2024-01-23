@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import LayoutHeaderSimple from '@/components/layout-contents/LayoutHeaderSimple/index.vue'
 import LayoutFooter from '@/components/layout-contents/LayoutFooter/index.vue'
+import LayoutHeaderSimple from '@/components/layout-contents/LayoutHeaderSimple/index.vue'
 </script>
 
 <template>

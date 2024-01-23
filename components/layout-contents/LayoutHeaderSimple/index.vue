@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import LayoutHeaderCommon from '../LayoutHeaderCommon/index.vue'
 import HeaderTitle from '../HeaderTitle/index.vue'
+import LayoutHeaderCommon from '../LayoutHeaderCommon/index.vue'
 </script>
 
 <template>

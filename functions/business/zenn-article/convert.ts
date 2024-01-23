@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
+import { DATE_YYYYMMDD_JP } from '@/constants/business/date/template'
 import type { ZennArticleResponse } from '@/infrastructures/rest/nuxt-server/api/zenn/articles'
 import type { ZennArticleViewModel } from '@/store/page/articles/zenn'
-import { DATE_YYYYMMDD_JP } from '@/constants/business/date/template'
 
 /**
  * 関数 `convertApiResponseToViewModel` は API 応答オブジェクトを受け取り、それを Zenn 記事のビュー モデル オブジェクトの配列に変換します。

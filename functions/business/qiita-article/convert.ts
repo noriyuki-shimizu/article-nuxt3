@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
+import { DATE_YYYYMMDD_JP } from '@/constants/business/date/template'
 import type { QiitaArticleResponse } from '@/infrastructures/rest/qiita.com/api/v2/items'
 import type { QiitaArticleViewModel } from '@/store/page/articles/qiita'
-import { DATE_YYYYMMDD_JP } from '@/constants/business/date/template'
 
 /**
  * 関数 `convertApiResponseToViewModel` は API 応答オブジェクトを受け取り、それを Qiita 記事のビューモデル配列に変換します。
