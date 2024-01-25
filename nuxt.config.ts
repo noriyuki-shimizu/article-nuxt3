@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     '@/plugins/rest/nuxtServerHttpClient.ts',
     '@/plugins/rest/qiitaHttpClient.ts'
   ],
-  modules: ['@nuxt/image'],
+  modules: ['@nuxt/image', '@vueuse/nuxt'],
   imports: {
     dirs: [
       'composables/*/index.{ts,js,mjs,mts}',

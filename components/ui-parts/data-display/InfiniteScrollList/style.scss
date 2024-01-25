@@ -1,0 +1,16 @@
+.infinite-scroll-list {
+  overflow-y: scroll;
+
+  &__only-text {
+    display: inline-block;
+    margin: 16px 0;
+  }
+
+  &__spinner {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 16px 0;
+    }
+  }
+}

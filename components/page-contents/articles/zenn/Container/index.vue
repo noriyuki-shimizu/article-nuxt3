@@ -1,32 +1,13 @@
 <script setup lang="ts">
-import ListItem from '../ListItem/index.vue'
-import Empty from '@/components/ui-parts/data-display/Empty/index.vue'
-import { usePageApiStore } from '@/store/page/articles/zenn'
-
-/** Page API Store */
-const pageApiStore = usePageApiStore()
-
-/** Zenn 記事一覧データ */
-const articles = pageApiStore.articles
+import List from '../List/index.vue'
 </script>
 
 <template>
   <div :class="$style['articles-container']">
-    <div :class="[$style['articles-container__body'], $style['body']]">
-      <h1 :class="$style['body__title']">
-        Zenn Tech 記事一覧
-      </h1>
-      <section :class="$style['body__list']">
-        <template v-if="LangUtil.isNull(articles) || LangUtil.isEmpty(articles)">
-          <Empty />
-        </template>
-        <template v-else>
-          <template v-for="article in articles" :key="article.id">
-            <ListItem :article="article" :class="$style['body__list-item']" />
-          </template>
-        </template>
-      </section>
-    </div>
+    <h1 :class="$style['articles-container__title']">
+      Zenn Tech 記事一覧
+    </h1>
+    <List />
   </div>
 </template>
 
