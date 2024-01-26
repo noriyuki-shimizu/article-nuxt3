@@ -32,7 +32,7 @@ export default defineNuxtConfig({
       'utils/*/index.{ts,js,mjs,mts}'
     ]
   },
-  css: ['ress', '~/assets/style/index.scss'],
+  css: ['ress', '@/assets/style/_index.scss'],
   vite: {
     plugins: [viteSvgLoader()]
   },
