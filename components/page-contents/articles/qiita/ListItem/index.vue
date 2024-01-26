@@ -2,6 +2,7 @@
 import type { Props } from './types'
 import HeartIconSvg from '@/assets/svg/heart-icon.svg?component'
 import ListDetail from '@/components/ui-parts/data-display/ListDetail/index.vue'
+import Tag from '@/components/ui-parts/data-display/Tag/index.vue'
 
 /** Props */
 const props = defineProps<Props>()
@@ -36,15 +37,15 @@ const props = defineProps<Props>()
         {{ props.article.title }}
       </template>
       <template #footer>
-        <ul :class="$style['list-item__tag-list']">
+        <div :class="$style['list-item__tag-list']">
           <template v-for="tagName in props.article.tagNames" :key="`${props.article.id}-${tagName}`">
-            <li :class="$style['list-item__tag-item']">
+            <Tag :class="$style['list-item__tag-item']">
               <NuxtLink :to="`https://qiita.com/tags/${tagName.toLowerCase()}`" :class="$style['list-item__tag-link']" target="_blank">
                 {{ tagName }}
               </NuxtLink>
-            </li>
+            </Tag>
           </template>
-        </ul>
+        </div>
         <div :class="$style['list-item__number']">
           <HeartIconSvg :class="$style['list-item__icon']" />
           <span :class="$style['list-item__number-text']">{{ props.article.likesCount.toLocaleString() }}</span>
