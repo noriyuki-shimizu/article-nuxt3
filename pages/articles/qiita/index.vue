@@ -60,7 +60,7 @@ useHead(() => {
     link: [
       {
         rel: 'canonical',
-        href: `${config.public.pageBaseUrl}/qiita`
+        href: `${config.public.pageBaseUrl}/articles/qiita`
       }
     ]
   }

@@ -49,7 +49,7 @@ useHead(() => {
     link: [
       {
         rel: 'canonical',
-        href: `${config.public.pageBaseUrl}/zenn`
+        href: `${config.public.pageBaseUrl}/articles/zenn`
       }
     ]
   }
