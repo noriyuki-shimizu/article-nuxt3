@@ -46,10 +46,14 @@
     font-size: 12px;
   }
 
+  &__title {
+    margin-bottom: 8px;
+    font-size: 100%;
+  }
+
   &__number {
     display: flex;
     align-items: center;
-    margin-top: 8px;
   }
 
   &__icon {

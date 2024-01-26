@@ -25,7 +25,7 @@ const onLoad = async (page: number): Promise<boolean> => {
 </script>
 
 <template>
-  <InfiniteScrollList :items="articles" :height="'calc(100vh - (66px + 56px + 48px))'" :on-load="onLoad">
+  <InfiniteScrollList :items="articles" :height="'calc(100vh - (60px + 64px + 56px + 6px))'" :on-load="onLoad">
     <template #record="{ item }">
       <ListItem :class="$style['list__item']" :article="item" />
     </template>

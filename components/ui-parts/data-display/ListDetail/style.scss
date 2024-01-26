@@ -2,14 +2,14 @@
   &__header {
     display: flex;
     align-items: center;
+    margin-bottom: 8px;
   }
 
   &__title {
-    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   &__footer {
-    margin-top: 8px;
     font-size: 12px;
   }
 }

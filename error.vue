@@ -65,12 +65,11 @@ useHeadSafe({
 
 .error-detail {
   padding: 16px;
+  margin-bottom: 24px;
   background-color: var(--color-background-snippet);
-  border-radius: 8px;
 }
 
 .error-link {
   display: block;
-  margin-top: 24px;
 }
 </style>
