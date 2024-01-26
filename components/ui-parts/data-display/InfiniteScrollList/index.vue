@@ -26,7 +26,7 @@ const { isLoading } = useInfiniteScroll(
     }
     isFinish.value = await props.onLoad(++page.value)
   },
-  { distance: 100 }
+  { distance: 10 }
 )
 </script>
 
