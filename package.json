@@ -14,7 +14,8 @@
     "lint:s": "stylelint '**/*.{css,scss,vue}' --ignore-path .gitignore",
     "format": "npm run format:e && npm run format:s",
     "format:e": "npm run lint:e -- --fix",
-    "format:s": "npm run lint:s -- --fix"
+    "format:s": "npm run lint:s -- --fix",
+    "test:ut": "vitest run"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.2.0",
