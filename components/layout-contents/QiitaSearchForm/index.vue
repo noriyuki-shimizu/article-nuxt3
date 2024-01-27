@@ -2,7 +2,6 @@
 import type { LocationQueryRaw } from 'vue-router'
 import type { Props } from './types'
 import InputSearch from '@/components/ui-parts/data-entry/input/InputSearch/index.vue'
-import { ENABLE_QUERY_KEY } from '@/constants/business/route/query'
 import { usePageUiStore } from '@/store/page/articles/qiita'
 
 preloadRouteComponents('/articles/qiita')
@@ -35,8 +34,7 @@ const onSearch = async (): Promise<void> => {
       ? {}
       : {
           q: uiStore.searchKeyword.value
-        },
-    ENABLE_QUERY_KEY
+        }
   )
 
   await navigateTo({
