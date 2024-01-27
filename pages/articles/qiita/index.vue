@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Container from '@/components/page-contents/articles/qiita/Container/index.vue'
+import { ENABLE_QUERY_KEY } from '@/constants/business/route/query'
 import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
 
 /** Runtime Config */
@@ -21,7 +22,7 @@ definePageMeta({
       }
 
       const pageUiStore = usePageUiStore()
-      const queryValue = RouteUtil.convertLocationQueryToValue(query)
+      const queryValue = RouteUtil.convertLocationQueryToValue(query, ENABLE_QUERY_KEY)
       pageUiStore.setSearchKeyword('q' in queryValue ? queryValue.q : null)
     },
     async () => {
