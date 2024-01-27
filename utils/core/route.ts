@@ -1,7 +1,7 @@
 import camelCaseKeys from 'camelcase-keys'
 import snakeCaseKeys from 'snakecase-keys'
 import type { LocationQueryRaw } from 'vue-router'
-import { ENABLE_QUERY_KEY } from '@/constants/business/route/query'
+import { isEmpty } from './lang'
 
 /**
  * 関数 `convertLocationQuery` は、オブジェクトのキーをスネークケースに変換し、変換されたキーを文字列として含む新しいオブジェクトを返します。
@@ -9,11 +9,12 @@ import { ENABLE_QUERY_KEY } from '@/constants/business/route/query'
  * @returns 関数 `convertLocationQuery` は、タイプ `LocationQueryRaw` のオブジェクトを返します。
  */
 export const convertLocationQuery = <T extends Record<string, unknown>>(
-  value: T
+  value: T,
+  enableQueryKey: string[] = []
 ): LocationQueryRaw => {
   return Object.entries(value).reduce((a, c) => {
     const [key, value] = c
-    if (!ENABLE_QUERY_KEY.includes(key)) {
+    if (!isEmpty(enableQueryKey) && !enableQueryKey.includes(key)) {
       return a
     }
     return Object.assign(a, snakeCaseKeys({
@@ -29,12 +30,13 @@ export const convertLocationQuery = <T extends Record<string, unknown>>(
  * @returns 関数 `convertLocationQueryToValue` は、文字列キーと文字列値を持つオブジェクトである `Record<string, string>` を返します。
  */
 export const convertLocationQueryToValue = (
-  value: LocationQueryRaw
+  value: LocationQueryRaw,
+  enableQueryKey: string[] = []
 ): Record<string, string> => {
   const camelCaseValue = camelCaseKeys(value, { deep: true })
   return Object.entries(camelCaseValue).reduce((a, c) => {
     const [key, value] = c
-    if (!ENABLE_QUERY_KEY.includes(key)) {
+    if (!isEmpty(enableQueryKey) && !enableQueryKey.includes(key)) {
       return a
     }
     return Object.assign(a, {
