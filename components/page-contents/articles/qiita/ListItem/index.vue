@@ -2,6 +2,7 @@
 import type { Props } from './types'
 import HeartIconSvg from '@/assets/svg/heart-icon.svg?component'
 import ListDetail from '@/components/ui-parts/data-display/ListDetail/index.vue'
+import ListRecord from '@/components/ui-parts/data-display/ListRecord/index.vue'
 import Tag from '@/components/ui-parts/data-display/Tag/index.vue'
 
 /** Props */
@@ -9,8 +10,9 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <article :class="$style['list-item']">
-    <NuxtLink :class="$style['list-item__link-bridge']" :to="props.article.url" target="_blank" :aria-label="`${props.article.title}へ遷移`" />
+  <ListRecord
+    :link-bridge="{ to: props.article.url, target: '_blank', ariaLabel: `${props.article.title}へ遷移` }"
+  >
     <ListDetail>
       <template #header>
         <NuxtImg
@@ -54,7 +56,7 @@ const props = defineProps<Props>()
         </div>
       </template>
     </ListDetail>
-  </article>
+  </ListRecord>
 </template>
 
 <style module lang="scss">

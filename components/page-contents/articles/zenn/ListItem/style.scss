@@ -1,30 +1,5 @@
 .list-item {
-  position: relative;
-  padding: 16px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &__link-bridge {
-    position: absolute;
-    inset: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__container {
-    display: flex;
-  }
-
-  &__left-aside {
-    display: flex;
-    align-items: center;
-    padding: 0 32px 0 16px;
+  &__large_text {
     font-size: 40px;
   }
 
