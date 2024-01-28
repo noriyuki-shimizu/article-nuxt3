@@ -1,3 +1,4 @@
+import { describe, test, it, expect } from 'vitest'
 import { isNull, isUndefined, isNil, isObject, isNumber, isString, isBoolean, isArray, isMap, isSet, isEmpty } from './lang'
 
 describe('Lang utility functions', () => {

@@ -1,4 +1,5 @@
 import { FetchError } from 'ofetch'
+import { describe, it, expect } from 'vitest'
 import { convertNuxtError } from './error'
 import { STATUS_CODE_INTERNAL_SERVER_ERROR } from '@/constants/common/http/statusCode'
 
