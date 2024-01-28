@@ -14,14 +14,20 @@ export const convertNuxtError = (err: unknown): Partial<NuxtError> => {
   }
   if (err instanceof FetchError) {
     return {
-      ...err,
+      name: err.name,
+      message: err.message,
+      cause: err.cause,
+      stack: err.stack,
       statusCode: err.status || STATUS_CODE_INTERNAL_SERVER_ERROR,
       data: err.data
     }
   }
   if (err instanceof Error) {
     return {
-      ...err,
+      name: err.name,
+      message: err.message,
+      cause: err.cause,
+      stack: err.stack,
       statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
       data: null
     }
