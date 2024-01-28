@@ -38,7 +38,7 @@ definePageMeta({
       } catch (err) {
         return nuxtApp.runWithContext(() => {
           const nuxtError = ErrorUtil.convertNuxtError(err)
-          return abortNavigation(nuxtError)
+          return abortNavigation({ ...nuxtError, fatal: true })
         })
       }
     }
