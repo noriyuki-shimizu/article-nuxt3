@@ -31,7 +31,6 @@ describe('Error utility functions', () => {
         ...fetchError,
         name: fetchError.name,
         message: fetchError.message,
-        cause: null,
         stack: fetchError.stack,
         statusCode: fetchError.status || STATUS_CODE_INTERNAL_SERVER_ERROR,
         data: fetchError.data
@@ -45,7 +44,6 @@ describe('Error utility functions', () => {
         ...error,
         name: error.name,
         message: error.message,
-        cause: null,
         stack: error.stack,
         statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
         data: null
