@@ -1,0 +1,9 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__description {
+    display: inline-block;
+  }
+}

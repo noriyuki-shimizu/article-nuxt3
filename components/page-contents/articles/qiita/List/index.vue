@@ -30,6 +30,9 @@ const onLoad = async (page: number) => {
 
 <template>
   <InfiniteScrollList :items="articles" :height="'calc(100vh - (60px + 64px + 56px + 6px))'" :on-load="onLoad">
+    <template #emptyDescription>
+      記事情報が見つかりませんでした。。。
+    </template>
     <template #record="{ item }">
       <ListItem :class="$style['list__item']" :article="item" />
     </template>
