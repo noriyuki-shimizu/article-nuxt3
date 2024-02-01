@@ -4,7 +4,12 @@
   }
 
   &__img {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
+    object-fit: contain;
   }
 
   &__description {

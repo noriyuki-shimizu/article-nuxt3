@@ -26,6 +26,7 @@ const props = defineProps<Props>()
           loading="lazy"
           height="32"
           width="32"
+          sizes="32px"
         />
         <div :class="$style['list-item__description']">
           <NuxtLink :to="`https://zenn.dev/${props.article.userName}`" :class="$style['list-item__link']" target="_blank">

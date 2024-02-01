@@ -19,11 +19,12 @@ const props = defineProps<Props>()
           :alt="props.article.userId"
           :src="props.article.userProfileImageUrl"
           :class="$style['list-item__img']"
-          ismap
+          :ismap="false"
           decoding="auto"
           loading="lazy"
           height="32"
           width="32"
+          sizes="32px"
         />
         <div :class="$style['list-item__description']">
           <NuxtLink :to="`https://qiita.com/${props.article.userId}`" :class="$style['list-item__link']" target="_blank">
