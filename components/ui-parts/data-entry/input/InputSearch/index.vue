@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 /** 入力値 */
-const model = defineModel({ required: true })
+const model = defineModel<string | null>({ required: true })
 </script>
 
 <template>
