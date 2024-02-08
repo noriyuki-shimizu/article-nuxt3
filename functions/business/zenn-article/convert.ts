@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { DATE_YYYYMMDD_JP } from '@/constants/business/date/template'
-import type { ZennArticleResponse } from '@/infrastructures/rest/nuxt-server/api/zenn/articles'
+import type { ZennArticleResponse } from '@/infrastructures/rest/nuxt/api/zenn/articles'
 import type { ZennArticleViewModel } from '@/store/page/articles/zenn'
 
 /**

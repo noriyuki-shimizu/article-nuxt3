@@ -1,6 +1,6 @@
 import type { ApiState, ZennArticleViewModel } from './types'
 import { convertApiResponseToViewModel } from '@/functions/business/zenn-article/convert'
-import { getRequest as getZennArticlesRequest } from '@/infrastructures/rest/nuxt-server/api/zenn/articles'
+import { getRequest as getZennArticlesRequest } from '@/infrastructures/rest/nuxt/api/zenn/articles'
 
 /**
  * Zenn Tech 記事一覧ページにおける Page API Store
