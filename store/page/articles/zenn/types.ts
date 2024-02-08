@@ -1,4 +1,4 @@
-import type { ZennArticle, ZennArticleUser } from '@/infrastructures/rest/nuxt-server/api/zenn/articles'
+import type { ZennArticle, ZennArticleUser } from '@/infrastructures/rest/nuxt/api/zenn/articles'
 
 /** Zenn の記事データにおける View Model */
 export type ZennArticleViewModel = Pick<ZennArticle, 'id' | 'title' | 'commentsCount' | 'likedCount' | 'articleType' | 'emoji' | 'path' | 'publishedAt' | 'bodyUpdatedAt'> & {
