@@ -1,5 +1,8 @@
 import viteSvgLoader from 'vite-svg-loader'
 
+/** 本番モードか */
+const isProduction = process.env.NODE_ENV === 'production'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -11,7 +14,8 @@ export default defineNuxtConfig({
     public: {
       pageBaseUrl: '',
       qiitaAccessToken: '',
-      logLevel: process.env.NODE_ENV === 'production' ? 3 : 5
+      logLevel: isProduction ? 3 : 5,
+      isProduction
     }
   },
   app: {
