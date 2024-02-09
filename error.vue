@@ -1,16 +1,28 @@
 <script setup lang="ts">
-import { STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_BAD_REQUEST, STATUS_CODE_NOT_FOUND } from '@/constants/common/http/statusCode'
+import { StatusCode } from '@/enums/common/http/statusCode'
 import type { ErrorProps } from '@/types/core/errorPage'
 
 /** Props */
 const props = defineProps<ErrorProps>()
 
+/** Runtime Config */
+const runtimeConfig = useRuntimeConfig()
+
 /**
- * 環境変数の値をチェックして、アプリケーションが開発環境で実行されているかどうかを判断
- * @returns 環境が開発環境かを示すブール値を返す
+ * エラーのタイトルを取得する
+ * @returns エラータイトル
  */
-const isDevelopment = (): boolean => {
-  return process.env.NODE_ENV === 'development'
+const getErrorTitle = (): string => {
+  switch (props.error.statusCode) {
+    case StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR:
+      return '致命的エラーが発生しました。'
+    case StatusCode.STATUS_CODE_BAD_REQUEST:
+      return '入力内容に誤りがあります。お手数ですが、もう一度入力内容の確認をお願いします。'
+    case StatusCode.STATUS_CODE_NOT_FOUND:
+      return 'お探しのページが見つかりませんでした。'
+    default:
+      return 'エラーが発生しました。'
+  }
 }
 
 /**
@@ -30,23 +42,11 @@ useHeadSafe({
 
 <template>
   <NuxtLayout>
-    <template v-if="props.error.statusCode === STATUS_CODE_INTERNAL_SERVER_ERROR">
-      <h2 :class="$style['error-title']">
-        致命的エラーが発生しました。
-      </h2>
-    </template>
-    <template v-else-if="props.error.statusCode === STATUS_CODE_BAD_REQUEST">
-      <h2 :class="$style['error-title']">
-        入力内容に誤りがあります。お手数ですが、もう一度入力内容の確認をお願いします。
-      </h2>
-    </template>
-    <template v-else-if="props.error.statusCode === STATUS_CODE_NOT_FOUND">
-      <h2 :class="$style['error-title']">
-        お探しのページが見つかりませんでした。
-      </h2>
-    </template>
+    <h2 :class="$style['error-title']">
+      {{ getErrorTitle() }}
+    </h2>
 
-    <template v-if="isDevelopment()">
+    <template v-if="!runtimeConfig.public.isProduction">
       <div :class="$style['error-detail']">
         {{ props.error }}
       </div>
