@@ -1,7 +1,7 @@
 import type { NuxtError } from '#app'
 import { FetchError } from 'ofetch'
 import { isString, isObject } from './lang'
-import { STATUS_CODE_INTERNAL_SERVER_ERROR } from '@/constants/common/http/statusCode'
+import { StatusCode } from '@/enums/common/http/statusCode'
 
 /**
  * エラーを Nuxt エラーデータに変換
@@ -18,7 +18,7 @@ export const convertNuxtError = (err: unknown): Partial<NuxtError> => {
       message: err.message,
       cause: err.cause,
       stack: err.stack,
-      statusCode: err.status || STATUS_CODE_INTERNAL_SERVER_ERROR,
+      statusCode: err.status || StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
       data: err.data
     }
   }
@@ -28,14 +28,14 @@ export const convertNuxtError = (err: unknown): Partial<NuxtError> => {
       message: err.message,
       cause: err.cause,
       stack: err.stack,
-      statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
+      statusCode: StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
       data: null
     }
   }
   return {
     name: 'AppError',
     message: 'Internal server error',
-    statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
+    statusCode: StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
     data: null
   }
 }

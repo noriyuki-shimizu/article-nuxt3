@@ -1,7 +1,7 @@
 import { FetchError } from 'ofetch'
 import { describe, it, expect } from 'vitest'
 import { convertNuxtError } from './error'
-import { STATUS_CODE_INTERNAL_SERVER_ERROR } from '@/constants/common/http/statusCode'
+import { StatusCode } from '@/enums/common/http/statusCode'
 
 describe('Error utility functions', () => {
   describe('convertNuxtError', () => {
@@ -10,13 +10,13 @@ describe('Error utility functions', () => {
         __nuxt_error: true,
         name: 'NuxtError',
         message: 'An error occurred',
-        statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
+        statusCode: StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
         data: null,
         fatal: false,
         unhandled: false,
         toJSON: () => {
           return {
-            statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
+            statusCode: StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
             statusMessage: '',
             message: ''
           }
@@ -32,7 +32,7 @@ describe('Error utility functions', () => {
         name: fetchError.name,
         message: fetchError.message,
         stack: fetchError.stack,
-        statusCode: fetchError.status || STATUS_CODE_INTERNAL_SERVER_ERROR,
+        statusCode: fetchError.status || StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
         data: fetchError.data
       }
       expect(convertNuxtError(fetchError)).toEqual(expectedError)
@@ -45,7 +45,7 @@ describe('Error utility functions', () => {
         name: error.name,
         message: error.message,
         stack: error.stack,
-        statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
+        statusCode: StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
         data: null
       }
       expect(convertNuxtError(error)).toEqual(expectedError)
@@ -56,7 +56,7 @@ describe('Error utility functions', () => {
       const expectedError = {
         name: 'AppError',
         message: 'Internal server error',
-        statusCode: STATUS_CODE_INTERNAL_SERVER_ERROR,
+        statusCode: StatusCode.STATUS_CODE_INTERNAL_SERVER_ERROR,
         data: null
       }
       expect(convertNuxtError(error)).toEqual(expectedError)

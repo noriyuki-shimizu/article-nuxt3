@@ -1,4 +1,4 @@
-import { STATUS_CODE_OK, STATUS_CODE_NO_CONTENT } from '@/constants/common/http/statusCode'
+import { StatusCode } from '@/enums/common/http/statusCode'
 import { getRequest } from '@/server/infrastructures/rest/zenn.dev/api/articles'
 import type { ZennArticleRequestQuery } from '@/server/infrastructures/rest/zenn.dev/api/articles'
 import type { ZennArticleApiRequestQuery } from '@/server/types/business/zenn/articles/http'
@@ -24,11 +24,11 @@ export default defineEventHandler(async (event) => {
     const response = await getRequest(convertRequestQuery(query))
 
     if (LangUtil.isUndefined(response._data)) {
-      setResponseStatus(event, STATUS_CODE_NO_CONTENT)
+      setResponseStatus(event, StatusCode.STATUS_CODE_NO_CONTENT)
       return
     }
 
-    setResponseStatus(event, STATUS_CODE_OK)
+    setResponseStatus(event, StatusCode.STATUS_CODE_OK)
     return response._data
   } catch (e) {
     const error = ErrorUtil.convertNuxtError(e)
