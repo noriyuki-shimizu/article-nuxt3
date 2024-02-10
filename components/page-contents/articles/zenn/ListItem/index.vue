@@ -37,9 +37,7 @@ const props = defineProps<Props>()
         </div>
       </template>
       <template #title>
-        <h2 :class="$style['list-item__title']">
-          {{ props.article.title }}
-        </h2>
+        {{ props.article.title }}
       </template>
       <template #footer>
         <div :class="$style['list-item__number']">
