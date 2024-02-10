@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Container from '@/components/page-contents/articles/qiita/Container/index.vue'
 import { ENABLE_QUERY_KEY } from '@/constants/business/route/query'
 import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
 
@@ -66,8 +65,10 @@ useHead(() => {
     ]
   }
 })
+
+await preloadComponents('PageContentsArticlesQiitaContainer')
 </script>
 
 <template>
-  <Container />
+  <PageContentsArticlesQiitaContainer />
 </template>

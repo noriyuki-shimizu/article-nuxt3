@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Spinner from '@/components/ui-parts/feedback/Spinner/index.vue'
-
 /** Loading Indicator */
 const { isLoading } = useLoadingIndicator()
 </script>
@@ -8,7 +6,7 @@ const { isLoading } = useLoadingIndicator()
 <template>
   <NuxtLayout>
     <div v-show="isLoading" :class="$style['spinner-wrapper']">
-      <Spinner />
+      <LazyUiPartsFeedbackSpinner />
     </div>
     <div v-show="!isLoading">
       <NuxtPage />

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ListItem from '../ListItem/index.vue'
-import InfiniteScrollList from '@/components/ui-parts/data-display/InfiniteScrollList/index.vue'
 import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
 import type { QiitaArticleViewModel } from '@/store/page/articles/qiita'
 
@@ -29,14 +27,14 @@ const onLoad = async (page: number) => {
 </script>
 
 <template>
-  <InfiniteScrollList :items="articles" :height="'calc(100vh - (60px + 64px + 56px + 6px))'" :on-load="onLoad">
+  <UiPartsDataDisplayInfiniteScrollList :items="articles" :height="'calc(100vh - (60px + 64px + 56px + 6px))'" :on-load="onLoad">
     <template #emptyDescription>
       記事情報が見つかりませんでした。。。
     </template>
     <template #record="{ item }">
-      <ListItem :class="$style['list__item']" :article="item" />
+      <PageContentsArticlesQiitaListItem :class="$style['list__item']" :article="item" />
     </template>
-  </InfiniteScrollList>
+  </UiPartsDataDisplayInfiniteScrollList>
 </template>
 
 <style module lang="scss">

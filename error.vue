@@ -38,6 +38,8 @@ useHeadSafe({
     { name: 'description', content: '技術記事閲覧サイトにおけるエラーページです。' }
   ]
 })
+
+prerenderRoutes(['/'])
 </script>
 
 <template>

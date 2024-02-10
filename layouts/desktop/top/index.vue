@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LayoutFooter from '@/components/layout-contents/LayoutFooter/index.vue'
+await preloadComponents(['LayoutContentsHeaderSimple', 'LayoutContentsFooter'])
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import LayoutFooter from '@/components/layout-contents/LayoutFooter/index.vue'
     <main :class="$style['layout-container__main']">
       <slot />
     </main>
-    <LayoutFooter :class="$style['layout-container__footer']" />
+    <LayoutContentsFooter :class="$style['layout-container__footer']" />
   </div>
 </template>
 

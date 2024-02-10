@@ -1,7 +1,5 @@
 <script setup lang="ts" generic="T extends unknown[]">
 import type { Props } from './types'
-import LazyEmpty from '@/components/ui-parts/data-display/Empty/index.vue'
-import LazySpinner from '@/components/ui-parts/feedback/Spinner/index.vue'
 
 /** Props */
 const props = withDefaults(defineProps<Props<T>>(), {
@@ -33,11 +31,11 @@ const { isLoading } = useInfiniteScroll(
 <template>
   <section ref="listElement" :class="$style['infinite-scroll-list']" :style="{ height: props.height }">
     <template v-if="LangUtil.isEmpty(props.items)">
-      <LazyEmpty :class="$style['infinite-scroll-list__empty']">
+      <LazyUiPartsDataDisplayEmpty :class="$style['infinite-scroll-list__empty']">
         <template #description>
           <slot name="emptyDescription" />
         </template>
-      </LazyEmpty>
+      </LazyUiPartsDataDisplayEmpty>
     </template>
     <template v-else>
       <template
@@ -47,7 +45,7 @@ const { isLoading } = useInfiniteScroll(
         <slot name="record" :item="item" />
       </template>
       <div v-show="isLoading && !isFinish" :class="$style['infinite-scroll-list__spinner-wrapper']">
-        <LazySpinner />
+        <LazyUiPartsFeedbackSpinner />
       </div>
     </template>
   </section>

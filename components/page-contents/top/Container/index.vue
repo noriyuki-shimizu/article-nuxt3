@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import BookIconSvg from '@/assets/svg/book-icon.svg?component'
+
+prerenderRoutes(['/articles/zenn', '/articles/qiita'])
 </script>
 
 <template>
