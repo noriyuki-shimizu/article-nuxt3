@@ -6,7 +6,7 @@ const { isLoading } = useLoadingIndicator()
 <template>
   <NuxtLayout>
     <div v-show="isLoading" :class="$style['spinner-wrapper']">
-      <LazyUiPartsFeedbackSpinner />
+      <UiPartsFeedbackSpinner />
     </div>
     <div v-show="!isLoading">
       <NuxtPage />
