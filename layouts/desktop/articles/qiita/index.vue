@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import LayoutFooter from '@/components/layout-contents/LayoutFooter/index.vue'
-import LayoutHeaderSearch from '@/components/layout-contents/LayoutHeaderSearch/index.vue'
+await preloadComponents(['LayoutContentsHeaderSearch', 'LayoutContentsFooter'])
 </script>
 
 <template>
   <div :class="$style['layout-container']">
-    <LayoutHeaderSearch :class="$style['layout-container__header']" />
+    <LayoutContentsHeaderSearch :class="$style['layout-container__header']" />
     <main :class="$style['layout-container__main']">
       <slot />
     </main>
-    <LayoutFooter :class="$style['layout-container__footer']" />
+    <LayoutContentsFooter :class="$style['layout-container__footer']" />
   </div>
 </template>
 

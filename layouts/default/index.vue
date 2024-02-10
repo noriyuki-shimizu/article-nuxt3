@@ -1,13 +1,11 @@
-<script setup lang="ts">
-import LayoutFooter from '@/components/layout-contents/LayoutFooter/index.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div :class="$style['layout-container']">
     <main :class="$style['layout-container__main']">
       <slot />
     </main>
-    <LayoutFooter :class="$style['layout-container__footer']" />
+    <LayoutContentsFooter :class="$style['layout-container__footer']" />
   </div>
 </template>
 

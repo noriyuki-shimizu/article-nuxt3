@@ -1,21 +1,19 @@
 <script setup lang="ts">
 import type { Props } from './types'
 import HeartIconSvg from '@/assets/svg/heart-icon.svg?component'
-import ListDetail from '@/components/ui-parts/data-display/ListDetail/index.vue'
-import ListRecord from '@/components/ui-parts/data-display/ListRecord/index.vue'
 
 /** Props */
 const props = defineProps<Props>()
 </script>
 
 <template>
-  <ListRecord
+  <UiPartsDataDisplayListRecord
     :link-bridge="{ to: `https://zenn.dev${props.article.path}`, target: '_blank', ariaLabel: `${props.article.title}へ遷移` }"
   >
     <template #leftAside>
       <span :class="$style['list-item__large_text']">{{ props.article.emoji }}</span>
     </template>
-    <ListDetail>
+    <UiPartsDataDisplayListDetail>
       <template #header>
         <NuxtImg
           :alt="props.article.userName"
@@ -39,9 +37,7 @@ const props = defineProps<Props>()
         </div>
       </template>
       <template #title>
-        <h2 :class="$style['list-item__title']">
-          {{ props.article.title }}
-        </h2>
+        {{ props.article.title }}
       </template>
       <template #footer>
         <div :class="$style['list-item__number']">
@@ -49,8 +45,8 @@ const props = defineProps<Props>()
           <span :class="$style['list-item__number-text']">{{ props.article.likedCount.toLocaleString() }}</span>
         </div>
       </template>
-    </ListDetail>
-  </ListRecord>
+    </UiPartsDataDisplayListDetail>
+  </UiPartsDataDisplayListRecord>
 </template>
 
 <style module lang="scss">

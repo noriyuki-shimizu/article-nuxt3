@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { LocationQueryRaw } from 'vue-router'
 import type { Props } from './types'
-import InputSearch from '@/components/ui-parts/data-entry/input/InputSearch/index.vue'
 import { ENABLE_QUERY_KEY } from '@/constants/business/route/query'
 import { usePageUiStore } from '@/store/page/articles/qiita'
 
@@ -48,6 +47,6 @@ const onSearch = async (): Promise<void> => {
 
 <template>
   <form @submit.prevent="onSearch()">
-    <InputSearch :model-value="searchKeyword" :size="props.size" @update:model-value="setSearchKeyword" />
+    <UiPartsDataEntryInputInputSearch :model-value="searchKeyword" :size="props.size" @update:model-value="setSearchKeyword" />
   </form>
 </template>

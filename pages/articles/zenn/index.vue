@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Container from '@/components/page-contents/articles/zenn/Container/index.vue'
 import { usePageApiStore } from '@/store/page/articles/zenn'
 
 /** Runtime Config */
@@ -54,8 +53,10 @@ useHead(() => {
     ]
   }
 })
+
+await preloadComponents('PageContentsArticlesZennContainer')
 </script>
 
 <template>
-  <Container />
+  <PageContentsArticlesZennContainer />
 </template>

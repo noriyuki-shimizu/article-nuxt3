@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Container from '@/components/page-contents/top/Container/index.vue'
-
 /** Runtime Config */
 const config = useRuntimeConfig()
 
@@ -21,8 +19,10 @@ useHead({
     }
   ]
 })
+
+await preloadComponents('PageContentsTopContainer')
 </script>
 
 <template>
-  <Container />
+  <PageContentsTopContainer />
 </template>
