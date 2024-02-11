@@ -7,18 +7,29 @@ import { getRequest as getQiitaArticlesRequest } from '@/infrastructures/rest/qi
  * @returns Page API Store
  */
 export const usePageApiStore = () => {
+  /** State */
   const _state = useState<ApiState>('page-api-articles-qiita-store', () => {
     return {
       articles: null
     }
   })
 
+  /** Getter */
   const getters = {
-    articles: computed<QiitaArticleViewModel[] | null>(() => {
-      return _state.value.articles
+    /** Qiita の記事情報データ */
+    articles: computed<QiitaArticleViewModel[] | null>((oldValue) => {
+      const newValue = _state.value.articles
+      if (LangUtil.isNull(newValue)) {
+        return null
+      }
+      if (!LangUtil.isNil(oldValue) && oldValue[0].id === newValue[0].id) {
+        return oldValue
+      }
+      return newValue
     })
   }
 
+  /** Action */
   const actions = {
     /**
      * 記事一覧を取得し、レスポンスデータをView Modelに変換する
