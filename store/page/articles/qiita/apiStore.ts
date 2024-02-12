@@ -22,7 +22,7 @@ export const usePageApiStore = () => {
       if (LangUtil.isNull(newValue)) {
         return null
       }
-      if (!LangUtil.isNil(oldValue) && oldValue[0].id === newValue[0].id) {
+      if (!LangUtil.isNil(oldValue) && oldValue.length === newValue.length && oldValue[0].id === newValue[0].id) {
         return oldValue
       }
       return newValue
