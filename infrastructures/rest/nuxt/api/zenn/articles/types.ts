@@ -1,10 +1,10 @@
-export type ZennArticleRequestQuery = {
+export interface ZennArticleRequestQuery {
     category?: string,
     order?: string
     page?: number
 }
 
-type ZennArticlePublication = {
+interface ZennArticlePublication {
   id: number,
   name: string,
   displayName: string,
@@ -13,14 +13,14 @@ type ZennArticlePublication = {
   avatarRegistered: boolean
 }
 
-export type ZennArticleUser = {
+export interface ZennArticleUser {
   id: number,
   username: string,
   name: string,
   avatarSmallUrl: string
 }
 
-export type ZennArticle = {
+export interface ZennArticle {
   id: number,
   postType: string,
   title: string,
@@ -40,7 +40,7 @@ export type ZennArticle = {
   publication: ZennArticlePublication | null
 }
 
-export type ZennArticleResponse = {
+export interface ZennArticleResponse {
     articles: ZennArticle[],
     nextPage: number
 }
