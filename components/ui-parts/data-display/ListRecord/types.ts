@@ -1,5 +1,5 @@
 /** レコード全体をリンクで囲う際のリンクデータ */
-export type LinkBridge = {
+export interface LinkBridge {
   /** リンク */
   to: string
   /** ターゲット */
@@ -9,7 +9,7 @@ export type LinkBridge = {
 }
 
 /** Props */
-export type Props = {
+export interface Props {
   /** レコード全体をリンクで囲う際のリンクデータ */
   linkBridge?: LinkBridge
 }

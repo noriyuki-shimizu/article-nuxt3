@@ -1,5 +1,5 @@
-/** */
-export type Props = {
+/** Props */
+export interface Props {
     /** placeholder */
     placeholder?: string
     /** Size */

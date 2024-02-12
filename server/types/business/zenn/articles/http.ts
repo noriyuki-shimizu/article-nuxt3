@@ -1,4 +1,4 @@
-export type ZennArticleApiRequestQuery = {
+export interface ZennArticleApiRequestQuery {
   category?: string,
   order?: string
   page?: number

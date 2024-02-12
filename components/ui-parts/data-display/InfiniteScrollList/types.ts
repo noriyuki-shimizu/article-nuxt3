@@ -1,5 +1,5 @@
 /** Props */
-export type Props<T> = {
+export interface Props<T> {
   /** リストデータ */
   items: T
   /** リスト表示の高さ */

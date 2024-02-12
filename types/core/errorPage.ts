@@ -1,7 +1,7 @@
 import type { NuxtError } from '#app'
 
 /** Error Page Props */
-export type ErrorProps = {
+export interface ErrorProps {
   /** Error */
   error: NuxtError
 }

@@ -1,14 +1,14 @@
-export type QiitaArticleRequestQuery = {
+export interface QiitaArticleRequestQuery {
     sort?: string,
     page?: number
     query?: string
 }
 
-export type QiitaTag = {
+export interface QiitaTag {
   name: string
 }
 
-export type QiitaUser = {
+export interface QiitaUser {
   description: string,
   facebookId: string,
   followeesCount: number,
@@ -27,7 +27,7 @@ export type QiitaUser = {
   websiteUrl: string
 }
 
-export type QiitaArticle = {
+export interface QiitaArticle {
   renderedBody: string,
   body: string,
   coediting: boolean,
@@ -49,4 +49,4 @@ export type QiitaArticle = {
   slide: boolean
 }
 
-export type QiitaArticleResponse = QiitaArticle[]
+export interface QiitaArticleResponse extends Array<QiitaArticle> {}
