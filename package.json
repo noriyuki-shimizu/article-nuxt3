@@ -22,7 +22,7 @@
     "@nuxt/image": "^1.2.0",
     "@nuxt/test-utils": "^3.10.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/parser": "^7.0.1",
     "@vitest/coverage-v8": "^1.2.2",
     "@vue/test-utils": "^2.4.4",
     "@vueuse/core": "^10.7.2",
