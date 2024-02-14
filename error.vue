@@ -54,7 +54,11 @@ prerenderRoutes(['/'])
       </div>
     </template>
 
-    <NuxtLink to="/" :class="$style['error-link']" @click="handleError">
+    <NuxtLink
+      to="/"
+      :class="$style['error-link']"
+      @click="handleError"
+    >
       トップページへ
     </NuxtLink>
   </NuxtLayout>

@@ -2,7 +2,10 @@
 
 <template>
   <div :class="$style['articles-container']">
-    <h1 v-once :class="$style['articles-container__title']">
+    <h1
+      v-once
+      :class="$style['articles-container__title']"
+    >
       Qiita 記事一覧
     </h1>
     <PageContentsArticlesQiitaList />

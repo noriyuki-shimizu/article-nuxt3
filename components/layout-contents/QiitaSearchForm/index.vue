@@ -47,6 +47,10 @@ const onSearch = async (): Promise<void> => {
 
 <template>
   <form @submit.prevent="onSearch()">
-    <UiPartsDataEntryInputInputSearch :model-value="searchKeyword" :size="props.size" @update:model-value="setSearchKeyword" />
+    <UiPartsDataEntryInputInputSearch
+      :model-value="searchKeyword"
+      :size="props.size"
+      @update:model-value="setSearchKeyword"
+    />
   </form>
 </template>

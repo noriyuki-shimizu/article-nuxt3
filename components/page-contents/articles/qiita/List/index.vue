@@ -40,7 +40,10 @@ const onLoad = async (page: number) => {
       <span v-once>記事情報が見つかりませんでした。。。</span>
     </template>
     <template #record="{ item }">
-      <PageContentsArticlesQiitaListItem :class="$style['list__item']" :article="item" />
+      <PageContentsArticlesQiitaListItem
+        :class="$style['list__item']"
+        :article="item"
+      />
     </template>
   </UiPartsDataDisplayInfiniteScrollList>
 </template>

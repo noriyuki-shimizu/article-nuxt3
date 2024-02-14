@@ -27,7 +27,11 @@ const props = defineProps<Props>()
           sizes="32px"
         />
         <div :class="$style['list-item__description']">
-          <NuxtLink :to="`https://zenn.dev/${props.article.userName}`" :class="$style['list-item__link']" target="_blank">
+          <NuxtLink
+            :to="`https://zenn.dev/${props.article.userName}`"
+            :class="$style['list-item__link']"
+            target="_blank"
+          >
             {{ props.article.userName }}
             <template v-if="!LangUtil.isEmpty(props.article.userName)">
               ({{ props.article.userDisplayName }})

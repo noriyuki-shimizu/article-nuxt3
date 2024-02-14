@@ -12,12 +12,18 @@ prerenderRoutes(['/articles/zenn', '/articles/qiita'])
     </h1>
     <ul :class="$style['top-container__link-list']">
       <li :class="$style['top-container__link-item']">
-        <NuxtLink to="/articles/zenn" prefetch>
+        <NuxtLink
+          to="/articles/zenn"
+          prefetch
+        >
           Zenn Tech の記事一覧を見る
         </NuxtLink>
       </li>
       <li :class="$style['top-container__link-item']">
-        <NuxtLink to="/articles/qiita" prefetch>
+        <NuxtLink
+          to="/articles/qiita"
+          prefetch
+        >
           Qiita の記事一覧を見る
         </NuxtLink>
       </li>

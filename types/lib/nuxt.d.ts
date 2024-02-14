@@ -1,4 +1,3 @@
-import type { Dayjs, ConfigType } from 'dayjs'
 import type { AppFetchResponse } from 'ofetch'
 import type { FetchRawParameters } from '@/types/core/http'
 
