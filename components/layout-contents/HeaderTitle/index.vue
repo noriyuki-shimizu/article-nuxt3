@@ -5,7 +5,10 @@ prerenderRoutes(['/'])
 </script>
 
 <template>
-  <NuxtLink to="/" :class="$style['header-title']">
+  <NuxtLink
+    to="/"
+    :class="$style['header-title']"
+  >
     <BookIconSvg :class="$style['header-title__icon']" />
     <h3 :class="$style['header-title__link-text']">
       技術記事閲覧サイト

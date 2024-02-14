@@ -18,7 +18,6 @@
     "plugin:import/recommended",
     "plugin:import/typescript",
     "@nuxt/eslint-config",
-    "@nuxtjs/eslint-config-typescript",
     "plugin:security/recommended-legacy"
   ],
   "settings": {

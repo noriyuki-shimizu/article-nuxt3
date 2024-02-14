@@ -36,7 +36,10 @@ const onLoad = async (page: number): Promise<boolean> => {
       <span v-once>記事情報が見つかりませんでした。。。</span>
     </template>
     <template #record="{ item }">
-      <PageContentsArticlesZennListItem :class="$style['list__item']" :article="item" />
+      <PageContentsArticlesZennListItem
+        :class="$style['list__item']"
+        :article="item"
+      />
     </template>
   </UiPartsDataDisplayInfiniteScrollList>
 </template>

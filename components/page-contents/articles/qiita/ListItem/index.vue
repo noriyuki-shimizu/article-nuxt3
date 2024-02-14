@@ -24,7 +24,11 @@ const props = defineProps<Props>()
           sizes="32px"
         />
         <div :class="$style['list-item__description']">
-          <NuxtLink :to="`https://qiita.com/${props.article.userId}`" :class="$style['list-item__link']" target="_blank">
+          <NuxtLink
+            :to="`https://qiita.com/${props.article.userId}`"
+            :class="$style['list-item__link']"
+            target="_blank"
+          >
             @{{ props.article.userId }}
             <template v-if="!LangUtil.isEmpty(props.article.userName)">
               ({{ props.article.userName }})
@@ -38,9 +42,16 @@ const props = defineProps<Props>()
       </template>
       <template #footer>
         <div :class="$style['list-item__tag-list']">
-          <template v-for="tagName in props.article.tagNames" :key="`${props.article.id}-${tagName}`">
+          <template
+            v-for="tagName in props.article.tagNames"
+            :key="`${props.article.id}-${tagName}`"
+          >
             <UiPartsDataDisplayTag :class="$style['list-item__tag-item']">
-              <NuxtLink :to="`https://qiita.com/tags/${tagName.toLowerCase()}`" :class="$style['list-item__tag-link']" target="_blank">
+              <NuxtLink
+                :to="`https://qiita.com/tags/${tagName.toLowerCase()}`"
+                :class="$style['list-item__tag-link']"
+                target="_blank"
+              >
                 {{ tagName }}
               </NuxtLink>
             </UiPartsDataDisplayTag>

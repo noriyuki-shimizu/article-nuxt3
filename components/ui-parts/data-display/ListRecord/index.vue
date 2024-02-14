@@ -20,7 +20,10 @@ const linkBridge = createLinkBridge(props.linkBridge)
       />
     </template>
     <div :class="$style['list-record__container']">
-      <div v-if="$slots.leftAside" :class="$style['list-record__left-aside']">
+      <div
+        v-if="$slots.leftAside"
+        :class="$style['list-record__left-aside']"
+      >
         <slot name="leftAside" />
       </div>
       <slot />
