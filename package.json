@@ -34,7 +34,7 @@
     "eslint-plugin-security": "^2.1.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "happy-dom": "^13.3.5",
-    "nuxt": "^3.10.1",
+    "nuxt": "^3.10.2",
     "playwright-core": "^1.41.1",
     "postcss": "^8.4.34",
     "postcss-html": "^1.6.0",
@@ -62,11 +62,11 @@
     "vite-svg-loader": "^5.1.0"
   },
   "engines": {
-    "node": "^20.10.0",
-    "npm": "^10.2.3"
+    "node": "^20.11.1",
+    "npm": "^10.2.4"
   },
   "volta": {
-    "node": "20.10.0",
-    "npm": "10.2.3"
+    "node": "20.11.1",
+    "npm": "10.2.4"
   }
 }
