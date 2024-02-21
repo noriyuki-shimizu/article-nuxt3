@@ -23,10 +23,20 @@
   }
 
   &__link-list {
-    padding-left: 20px;
+    list-style: none;
   }
 
   &__link-item {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link-text {
+    display: inline-block;
+    margin-left: 8px;
   }
 }

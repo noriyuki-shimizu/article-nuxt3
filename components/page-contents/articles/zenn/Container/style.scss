@@ -1,7 +1,13 @@
-.articles-container {
+.zenn-articles-container {
   width: 100%;
 
   &__title {
+    display: flex;
+    align-items: center;
     margin-bottom: 16px;
+  }
+
+  &__title-text {
+    margin-left: 8px;
   }
 }

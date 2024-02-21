@@ -1,12 +1,29 @@
 <template>
   <div :class="$style['list-detail']">
-    <header :class="$style['list-detail__header']">
+    <header
+      v-if="$slots.header"
+      :class="$style['list-detail__header']"
+    >
       <slot name="header" />
     </header>
-    <h2 :class="$style['list-detail__title']">
+    <h2
+      v-if="$slots.title"
+      :class="$style['list-detail__title']"
+    >
       <slot name="title" />
     </h2>
-    <footer :class="$style['list-detail__footer']">
+    <div
+      v-if="$slots.description"
+      :class="$style['list-detail__description-wrapper']"
+    >
+      <p :class="$style['list-detail__description']">
+        <slot name="description" />
+      </p>
+    </div>
+    <footer
+      v-if="$slots.footer"
+      :class="$style['list-detail__footer']"
+    >
       <slot name="footer" />
     </footer>
   </div>

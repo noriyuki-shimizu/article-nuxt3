@@ -1,5 +1,9 @@
 .list-item {
+  padding: 16px;
+
   &__large_text {
+    display: inline-block;
+    padding: 0 32px 0 16px;
     font-size: 40px;
   }
 

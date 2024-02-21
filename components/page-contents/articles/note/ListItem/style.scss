@@ -1,0 +1,66 @@
+.list-item {
+  &__main-img {
+    position: absolute;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__list-detail {
+    padding: 16px;
+    margin-left: 240px;
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &__profile-img {
+    position: relative;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  &__description {
+    margin-left: 16px;
+  }
+
+  &__sub-text {
+    display: block;
+    font-size: 12px;
+  }
+}
+
+.footer-content {
+  display: flex;
+  font-size: 12px;
+
+  &__number {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__number-text {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    color: var(--color-custom-accent);
+  }
+}

@@ -10,6 +10,13 @@ export default defineNitroPlugin((nitroApp) => {
       event.node.res
         .setHeader('Access-Control-Allow-Origin', config.public.pageBaseUrl)
         .setHeader('Access-Control-Allow-Methods', '*')
+      return
+    }
+    if (
+      event.path.includes('/img/') &&
+      (event.path.includes('.png') || event.path.includes('.jpeg'))
+    ) {
+      event.node.res.setHeader('Cache-Control', 'max-age=31536000')
     }
   })
 
