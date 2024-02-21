@@ -1,3 +1,4 @@
+import snakecaseKeys from 'snakecase-keys'
 import { StatusCode } from '@/enums/common/http/statusCode'
 import { getRequest } from '@/server/infrastructures/rest/zenn.dev/api/articles'
 import type { ZennArticleRequestQuery } from '@/server/infrastructures/rest/zenn.dev/api/articles'
@@ -10,7 +11,9 @@ import { ErrorUtil, LangUtil } from '@/utils/core'
  * @param {ZennArticleApiRequestQuery} query - 「query」パラメータのタイプは「ZennArticleApiRequestQuery」です。
  * @returns 関数 `convertRequestQuery` は、タイプ `ZennArticleRequestQuery` のオブジェクトを返します。
  */
-const convertRequestQuery = (query: ZennArticleApiRequestQuery): ZennArticleRequestQuery => {
+const convertRequestQuery = (
+  query: ZennArticleApiRequestQuery
+): ZennArticleRequestQuery => {
   return {
     category: query?.category,
     order: query?.order,
@@ -29,7 +32,7 @@ export default defineEventHandler(async (event) => {
     }
 
     setResponseStatus(event, StatusCode.STATUS_CODE_OK)
-    return response._data
+    return snakecaseKeys({ ...response._data }, { deep: true })
   } catch (e) {
     const error = ErrorUtil.convertNuxtError(e)
     throw createError(error)
