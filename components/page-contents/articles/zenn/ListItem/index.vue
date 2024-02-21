@@ -9,6 +9,7 @@ const props = defineProps<Props>()
 <template>
   <UiPartsDataDisplayListRecord
     :link-bridge="{ to: `https://zenn.dev${props.article.path}`, target: '_blank', ariaLabel: `${props.article.title}へ遷移` }"
+    :class="$style['list-item']"
   >
     <template #leftAside>
       <span :class="$style['list-item__large_text']">{{ props.article.emoji }}</span>

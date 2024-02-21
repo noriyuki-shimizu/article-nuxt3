@@ -1,23 +1,23 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div :class="$style['zenn-articles-container']">
+  <div :class="$style['note-articles-container']">
     <h1
       v-once
-      :class="$style['zenn-articles-container__title']"
+      :class="$style['note-articles-container__title']"
     >
       <NuxtImg
         alt="Note Com Icon"
-        src="/img/zenn-icon.jpg"
+        src="/img/note-com-icon.jpg"
         :ismap="false"
         decoding="auto"
         height="48"
         width="48"
         sizes="48px"
       />
-      <span :class="$style['zenn-articles-container__title-text']">Zenn Tech 記事一覧</span>
+      <span :class="$style['note-articles-container__title-text']">note Tech 記事一覧</span>
     </h1>
-    <PageContentsArticlesZennList />
+    <PageContentsArticlesNoteList />
   </div>
 </template>
 

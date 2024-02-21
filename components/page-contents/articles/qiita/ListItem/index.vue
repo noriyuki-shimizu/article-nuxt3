@@ -9,6 +9,7 @@ const props = defineProps<Props>()
 <template>
   <UiPartsDataDisplayListRecord
     :link-bridge="{ to: props.article.url, target: '_blank', ariaLabel: `${props.article.title}へ遷移` }"
+    :class="$style['list-item']"
   >
     <UiPartsDataDisplayListDetail>
       <template #header>

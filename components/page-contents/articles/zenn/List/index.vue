@@ -31,13 +31,14 @@ const onLoad = async (page: number): Promise<boolean> => {
     :items="articles"
     :height="'calc(100vh - (60px + 64px + 56px + 6px))'"
     :on-load="onLoad"
+    :class="$style['zenn-list']"
   >
     <template #emptyDescription>
       <span v-once>記事情報が見つかりませんでした。。。</span>
     </template>
     <template #record="{ item }">
       <PageContentsArticlesZennListItem
-        :class="$style['list__item']"
+        :class="$style['zenn-list__item']"
         :article="item"
       />
     </template>
