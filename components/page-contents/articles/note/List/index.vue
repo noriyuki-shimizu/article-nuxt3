@@ -27,7 +27,6 @@ const onLoad = async (page: number): Promise<boolean> => {
 </script>
 
 <template>
-  <!-- <pre>{{ articles }}</pre> -->
   <UiPartsDataDisplayInfiniteScrollList
     :items="articles"
     :height="'calc(100vh - (60px + 64px + 56px + 6px))'"
