@@ -1,5 +1,8 @@
 import type { AppFetchResponse, FetchResponse } from 'ofetch'
-import { convertAppFetchResponse } from '@/server/functions/business/http/rest'
+import {
+  createCommonFetchOption,
+  convertAppFetchResponse
+} from '@/server/functions/business/http/rest'
 import type { FetchRawParameters } from '@/types/core/http'
 
 /**
@@ -13,6 +16,9 @@ export default async <T = object>(
   request: FetchRawParameters<T>[0],
   options?: FetchRawParameters<T>[1]
 ): Promise<AppFetchResponse<T>> => {
-  const response = await $fetch.raw<T>(request, options)
+  const response = await $fetch.raw<T>(
+    request,
+    createCommonFetchOption(options)
+  )
   return convertAppFetchResponse(response as FetchResponse<T>)
 }

@@ -1,3 +1,4 @@
+import snakecaseKeys from 'snakecase-keys'
 import { StatusCode } from '@/enums/common/http/statusCode'
 import type { NoteTechArticleRequestQuery } from '@/server/infrastructures/rest/note.com/api/v1/categories/tech'
 import { getRequest } from '@/server/infrastructures/rest/note.com/api/v1/categories/tech'
@@ -10,7 +11,9 @@ import { ErrorUtil, LangUtil } from '@/utils/core'
  * @param {NoteTechArticleApiRequestQuery} query - 「query」パラメータのタイプは「NoteTechArticleApiRequestQuery」です。
  * @returns NoteTechArticleRequestQuery タイプのオブジェクト。
  */
-const convertRequestQuery = (query: NoteTechArticleApiRequestQuery): NoteTechArticleRequestQuery => {
+const convertRequestQuery = (
+  query: NoteTechArticleApiRequestQuery
+): NoteTechArticleRequestQuery => {
   return {
     sort: query?.sort,
     page: query?.page
@@ -28,7 +31,7 @@ export default defineEventHandler(async (event) => {
     }
 
     setResponseStatus(event, StatusCode.STATUS_CODE_OK)
-    return response._data
+    return snakecaseKeys({ ...response._data }, { deep: true })
   } catch (e) {
     const error = ErrorUtil.convertNuxtError(e)
     throw createError(error)

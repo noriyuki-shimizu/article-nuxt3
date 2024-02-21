@@ -1,6 +1,6 @@
 import type { AppFetchResponse } from 'ofetch'
 import type { ZennArticleRequestQuery, ZennArticleResponse } from './types'
-import http from '@/server/infrastructures/rest/zenn.dev/http'
+import http from '@/server/infrastructures/rest/http'
 
 /**
  * 関数 `getRequest` は、オプションのクエリ パラメーターを使用して、記事を取得するための GET リクエストを Zenn API に送信します。
@@ -9,7 +9,9 @@ import http from '@/server/infrastructures/rest/zenn.dev/http'
  * によって返された記事のフィルタリングやページネーションに使用できます。
  * @returns タイプ `AppFetchResponse<ZennArticleResponse>` のオブジェクトに解決される Promise。
  */
-export const getRequest = (query?: ZennArticleRequestQuery): Promise<AppFetchResponse<ZennArticleResponse>> => {
+export const getRequest = (
+  query?: ZennArticleRequestQuery
+): Promise<AppFetchResponse<ZennArticleResponse>> => {
   return http<ZennArticleResponse>('https://zenn.dev/api/articles', {
     query
   })
