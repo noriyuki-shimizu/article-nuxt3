@@ -16,7 +16,7 @@
     "format:e": "npm run lint:e -- --fix",
     "format:s": "npm run lint:s -- --fix",
     "test:ut": "vitest run",
-    "test:vrt": "playwright test -c playwright.config.vrt.ts",
+    "test:vrt": "playwright test -c playwright-vrt.config.ts",
     "test:vrt:us": "npm run test:vrt -- --update-snapshots",
     "test:vrt:sr": "playwright show-report",
     "test:vrt:ui": "npm run test:vrt -- --ui"
