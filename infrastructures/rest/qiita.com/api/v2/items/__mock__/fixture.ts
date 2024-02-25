@@ -1,5 +1,6 @@
 import type { QiitaArticleResponse } from '../types'
 
+/** 正常系の記事データ */
 export const successData: QiitaArticleResponse = [
   {
     renderedBody: 'renderedBody',
@@ -393,4 +394,5 @@ export const successData: QiitaArticleResponse = [
   }
 ]
 
+/** 空の記事データ */
 export const emptyData: QiitaArticleResponse = []
