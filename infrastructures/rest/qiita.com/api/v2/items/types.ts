@@ -9,22 +9,22 @@ export interface QiitaTag {
 }
 
 export interface QiitaUser {
-  description: string,
-  facebookId: string,
+  description: string | null,
+  facebookId: string | null,
   followeesCount: number,
   followersCount: number,
   githubLoginName: string | null,
   id: string,
   itemsCount: number,
-  linkedinId: string,
-  location: string,
+  linkedinId: string | null,
+  location: string | null,
   name: string,
-  organization: string,
+  organization: string | null,
   permanentId: number,
   profileImageUrl: string,
   teamOnly: boolean,
   twitterScreenName: string | null,
-  websiteUrl: string
+  websiteUrl: string | null
 }
 
 export interface QiitaArticle {
