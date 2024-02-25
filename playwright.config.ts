@@ -72,7 +72,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'PORT=3009 node ./.output/server/index.mjs',
+    command: 'PORT=3009 npm run preview',
     url: 'http://127.0.0.1:3009',
     reuseExistingServer: !process.env.CI
   }
