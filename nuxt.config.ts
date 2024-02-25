@@ -46,5 +46,14 @@ export default defineNuxtConfig({
       include: ['../types/lib/index.d.ts'],
       exclude: ['../test/**', '../**/*.spec.ts']
     }
-  }
+  },
+  ignore: [
+    'tests/*',
+    '**/__screenshots__/*',
+    '**/__mock__/*',
+    '**/*.{spec,test,vrt}.{js,cts,mts,ts,jsx,tsx}',
+    '**/*.d.{cts,mts,ts}',
+    '**/.{output,git,cache,data}',
+    '.nuxt/analyze'
+  ]
 })
