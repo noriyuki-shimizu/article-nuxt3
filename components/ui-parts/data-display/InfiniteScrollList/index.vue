@@ -35,7 +35,10 @@ const { isLoading } = useInfiniteScroll(
     :style="{ height: props.height }"
   >
     <template v-if="LangUtil.isEmpty(props.items)">
-      <LazyUiPartsDataDisplayEmpty :class="$style['infinite-scroll-list__empty']">
+      <LazyUiPartsDataDisplayEmpty
+        id="infinite-scroll-list-display-empty-data"
+        :class="$style['infinite-scroll-list__empty']"
+      >
         <template #description>
           <slot name="emptyDescription">
             No Data
