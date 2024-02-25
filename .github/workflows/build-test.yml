@@ -29,8 +29,10 @@ jobs:
         run: npm run test:ut
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Run VRT Build
+        run: VRT=true npm run build
       - name: Run VRT tests
-        run: npm run build:vrt && npm run test:vrt
+        run: npm run test:vrt
       - uses: actions/upload-artifact@v3
         if: always()
         with:

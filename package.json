@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build --dotenv .env",
-    "build:vrt": "VRT=true nuxt build --dotenv .env",
+    "build:vrt": "VRT=true npm run build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
