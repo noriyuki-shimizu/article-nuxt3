@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build --dotenv .env",
+    "build:vrt": "VRT=true nuxt build --dotenv .env",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -18,7 +19,6 @@
     "test:ut": "vitest run",
     "test:vrt": "playwright test -c playwright-vrt.config.ts",
     "test:vrt:us": "npm run test:vrt -- --update-snapshots",
-    "test:vrt:sr": "playwright show-report",
     "test:vrt:ui": "npm run test:vrt -- --ui"
   },
   "devDependencies": {
@@ -40,8 +40,10 @@
     "eslint-plugin-security": "^2.1.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "happy-dom": "^13.3.5",
+    "msw": "^2.2.1",
     "nuxt": "^3.10.2",
     "playwright-core": "^1.41.1",
+    "playwright-msw": "^3.0.1",
     "postcss": "^8.4.34",
     "postcss-html": "^1.6.0",
     "postcss-scss": "^4.0.9",
@@ -74,5 +76,10 @@
   "volta": {
     "node": "20.11.1",
     "npm": "10.2.4"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
