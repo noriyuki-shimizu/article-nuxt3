@@ -37,25 +37,29 @@ const { isLoading } = useInfiniteScroll(
     <template v-if="LangUtil.isEmpty(props.items)">
       <LazyUiPartsDataDisplayEmpty :class="$style['infinite-scroll-list__empty']">
         <template #description>
-          <slot name="emptyDescription" />
+          <slot name="emptyDescription">
+            No Data
+          </slot>
         </template>
       </LazyUiPartsDataDisplayEmpty>
     </template>
     <template v-else>
-      <template
-        v-for="item in props.items"
-        :key="item.id"
-      >
-        <slot
-          name="record"
-          :item="item"
-        />
-      </template>
-      <div
-        v-show="isLoading && !isFinish"
-        :class="$style['infinite-scroll-list__spinner-wrapper']"
-      >
-        <LazyUiPartsFeedbackSpinner />
+      <div id="infinite-scroll-list-display-data">
+        <template
+          v-for="item in props.items"
+          :key="item.id"
+        >
+          <slot
+            name="record"
+            :item="item"
+          />
+        </template>
+        <div
+          v-show="isLoading && !isFinish"
+          :class="$style['infinite-scroll-list__spinner-wrapper']"
+        >
+          <LazyUiPartsFeedbackSpinner />
+        </div>
       </div>
     </template>
   </section>
