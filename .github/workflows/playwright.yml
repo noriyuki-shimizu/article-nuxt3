@@ -26,7 +26,7 @@ jobs:
       - name: Run VRT Build
         run: npm run build:vrt
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps && npx playwright install chrome && npx playwright install msedge
       - name: Run VRT tests
         run: HOME=/root npm run test:vrt
       - uses: actions/upload-artifact@v4
