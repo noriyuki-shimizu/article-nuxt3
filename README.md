@@ -27,6 +27,36 @@ Executing Lint:
 npm run lint
 ```
 
+### Unit Test
+
+Executing Unit Test:
+
+```bash
+npm run test:ut
+```
+
+### VRT
+
+Executing VRT:
+
+```bash
+docker pull mcr.microsoft.com/playwright:v1.41.1-jammy
+
+docker run -it --rm --ipc=host mcr.microsoft.com/playwright:v1.41.1-jammy /bin/bash
+
+---
+
+root@docker-desktop:/work# npm ci
+
+root@docker-desktop:/work# npm run build:vrt
+
+# Executing VRT
+root@docker-desktop:/work# npm run test:vrt
+
+# Update Snapshots
+root@docker-desktop:/work# npm run test:vrt:us
+```
+
 ### Format
 
 Perform file formatting:

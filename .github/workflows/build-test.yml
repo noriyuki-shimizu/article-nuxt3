@@ -9,8 +9,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    # container:
-    #   image: mcr.microsoft.com/playwright:v1.41.1-jammy
     strategy:
       matrix:
         node-version: [20.11.1]
@@ -29,15 +27,3 @@ jobs:
         run: npm run lint
       - name: Run Unit Test
         run: npm run test:ut
-      # - name: Run VRT Build
-      #   run: VRT=true npm run build
-      # - name: Install Playwright Browsers
-      #   run: npx playwright install --with-deps
-      # - name: Run VRT tests
-      #   run: npm run test:vrt
-      # - uses: actions/upload-artifact@v3
-      #   if: always()
-      #   with:
-      #     name: playwright-report
-      #     path: playwright-report/
-      #     retention-days: 30
