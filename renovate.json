@@ -8,9 +8,6 @@
   "addLabels": ["renovate"],
   "reviewers": ["noriyuki-shimizu"],
   "ignoreDeps": ["node", "npm"],
-  "major": {
-    "enabled": false
-  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
