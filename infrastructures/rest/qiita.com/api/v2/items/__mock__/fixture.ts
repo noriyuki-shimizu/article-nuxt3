@@ -30,7 +30,7 @@ export const successData: QiitaArticleResponse = [
       name: '',
       organization: '',
       permanentId: 3289992,
-      profileImageUrl: 'https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3289992/profile-images/1707318925',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: 'kotoganaiyo',
       websiteUrl: ''
@@ -68,7 +68,7 @@ export const successData: QiitaArticleResponse = [
       name: 'Takaaki Yayoi',
       organization: 'Databricks',
       permanentId: 1168882,
-      profileImageUrl: 'https://lh3.googleusercontent.com/a-/AOh14GiHDumucs3o6fmzfrEsScv2xRCHlOlUpn5zNq5u=s50',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: 'takaAki',
       websiteUrl: 'https://databricks.com/jp/'
@@ -106,7 +106,7 @@ export const successData: QiitaArticleResponse = [
       name: '',
       organization: '',
       permanentId: 3571999,
-      profileImageUrl: 'https://s3-ap-northeast-1.amazonaws.com/qiita-image-store/0/3571999/10c210fe408c2492b4d760e94c330fec5ecdec5d/large.png?1696601539',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: null,
       websiteUrl: ''
@@ -144,7 +144,7 @@ export const successData: QiitaArticleResponse = [
       name: 'Ikemen Mas Kot',
       organization: '',
       permanentId: 211162,
-      profileImageUrl: 'https://s3-ap-northeast-1.amazonaws.com/qiita-image-store/0/211162/2c595ae6fa3935f290b29241a8947c41dd71f6df/xLarge.png?1702603155',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: 'HandsomeKinoko',
       websiteUrl: 'https://scholar.google.com/citations?user=UVyoQ7YAAAAJ\u0026hl=ja'
@@ -192,7 +192,7 @@ export const successData: QiitaArticleResponse = [
       name: '',
       organization: null,
       permanentId: 102207,
-      profileImageUrl: 'https://qiita-image-store.s3.amazonaws.com/0/102207/profile-images/1473708626',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: 'tsujiPneuma',
       websiteUrl: null
@@ -230,7 +230,7 @@ export const successData: QiitaArticleResponse = [
       name: 'ぬざた',
       organization: '',
       permanentId: 3537209,
-      profileImageUrl: 'https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3537209/profile-images/1706379953',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: 'Reo99870770',
       websiteUrl: ''
@@ -268,7 +268,7 @@ export const successData: QiitaArticleResponse = [
       name: '',
       organization: null,
       permanentId: 649673,
-      profileImageUrl: 'https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/649673/profile-images/1591390534',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: null,
       websiteUrl: null
@@ -306,7 +306,7 @@ export const successData: QiitaArticleResponse = [
       name: 'gintaro',
       organization: '',
       permanentId: 3677302,
-      profileImageUrl: 'https://s3-ap-northeast-1.amazonaws.com/qiita-image-store/0/3677302/336ac5514c9fc9232172608fcc36f92acaefbe3f/xLarge.png?1707053357',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: null,
       websiteUrl: ''
@@ -344,7 +344,7 @@ export const successData: QiitaArticleResponse = [
       name: '',
       organization: '',
       permanentId: 1686019,
-      profileImageUrl: 'https://pbs.twimg.com/profileImages/1327613680310132740/KaYSQr02Bigger.jpg',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: 'arairuca',
       websiteUrl: ''
@@ -382,7 +382,7 @@ export const successData: QiitaArticleResponse = [
       name: '',
       organization: '',
       permanentId: 649608,
-      profileImageUrl: 'https://s3-ap-northeast-1.amazonaws.com/qiita-image-store/0/649608/e6ebc8d07db1a43c67927f80f4484ebdf7fba834/xLarge.png?1669202403',
+      profileImageUrl: '/img/no-image-icon.jpg',
       teamOnly: false,
       twitterScreenName: null,
       websiteUrl: ''
