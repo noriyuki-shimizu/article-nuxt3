@@ -5,7 +5,8 @@ test.describe('トップページ', () => {
     await page.goto('/')
     await page.waitForLoadState('domcontentloaded')
 
-    for (const img of await page.getByRole('img').all()) {
+    const imgRoleLocators = await page.getByRole('img').all()
+    for (const img of imgRoleLocators) {
       const tagName = await img.evaluate(el => {
         return el.tagName
       })
