@@ -6,7 +6,9 @@ test.describe('トップページ', () => {
     await page.waitForLoadState('domcontentloaded')
 
     for (const img of await page.getByRole('img').all()) {
-      const tagName = await img.evaluate(el => el.tagName)
+      const tagName = await img.evaluate(el => {
+        return el.tagName
+      })
       if (tagName !== 'svg') {
         await expect(img).toHaveJSProperty('complete', true)
         await expect(img).not.toHaveJSProperty('naturalWidth', 0)
