@@ -10,6 +10,14 @@ test.describe('Qiita記事一覧', () => {
     const infiniteScrollListDisplayData = page.locator('#infinite-scroll-list-display-data')
     await infiniteScrollListDisplayData.waitFor()
 
+    for (const img of await page.getByRole('img').all()) {
+      const tagName = await img.evaluate(el => el.tagName)
+      if (tagName !== 'svg') {
+        await expect(img).toHaveJSProperty('complete', true)
+        await expect(img).not.toHaveJSProperty('naturalWidth', 0)
+      }
+    }
+
     await expect(page).toHaveScreenshot()
   })
 
@@ -20,6 +28,14 @@ test.describe('Qiita記事一覧', () => {
 
     const infiniteScrollListDisplayData = page.locator('#infinite-scroll-list-display-empty-data')
     await infiniteScrollListDisplayData.waitFor()
+
+    for (const img of await page.getByRole('img').all()) {
+      const tagName = await img.evaluate(el => el.tagName)
+      if (tagName !== 'svg') {
+        await expect(img).toHaveJSProperty('complete', true)
+        await expect(img).not.toHaveJSProperty('naturalWidth', 0)
+      }
+    }
 
     await expect(page).toHaveScreenshot()
   })
