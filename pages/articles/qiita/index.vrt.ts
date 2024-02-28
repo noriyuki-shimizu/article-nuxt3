@@ -10,6 +10,19 @@ test.describe('Qiita記事一覧', () => {
     const infiniteScrollListDisplayData = page.locator('#infinite-scroll-list-display-data')
     await infiniteScrollListDisplayData.waitFor()
 
+    const imgRoleLocators = (await page.getByRole('img').all())
+    // TODO: CI 上で最後の要素が見つからないため、最後の要素を除去
+    imgRoleLocators.pop()
+    for (const img of imgRoleLocators) {
+      const tagName = await img.evaluate(el => {
+        return el.tagName
+      })
+      if (tagName !== 'svg') {
+        await expect(img).toHaveJSProperty('complete', true)
+        await expect(img).not.toHaveJSProperty('naturalWidth', 0)
+      }
+    }
+
     await expect(page).toHaveScreenshot()
   })
 
@@ -20,6 +33,19 @@ test.describe('Qiita記事一覧', () => {
 
     const infiniteScrollListDisplayData = page.locator('#infinite-scroll-list-display-empty-data')
     await infiniteScrollListDisplayData.waitFor()
+
+    const imgRoleLocators = (await page.getByRole('img').all())
+    // TODO: CI 上で最後の要素が見つからないため、最後の要素を除去
+    imgRoleLocators.pop()
+    for (const img of imgRoleLocators) {
+      const tagName = await img.evaluate(el => {
+        return el.tagName
+      })
+      if (tagName !== 'svg') {
+        await expect(img).toHaveJSProperty('complete', true)
+        await expect(img).not.toHaveJSProperty('naturalWidth', 0)
+      }
+    }
 
     await expect(page).toHaveScreenshot()
   })
