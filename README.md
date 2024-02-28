@@ -40,14 +40,21 @@ npm run test:ut
 Executing VRT:
 
 ```bash
+# Image pull
 docker pull mcr.microsoft.com/playwright:v1.41.1-jammy
 
-docker run -it --rm --ipc=host mcr.microsoft.com/playwright:v1.41.1-jammy /bin/bash
+# Docker run
+docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.41.1-jammy /bin/bash
 
 ---
 
+# Install dependencies
 root@docker-desktop:/work# npm ci
 
+# Install Playwright Browsers
+root@docker-desktop:/work# npx playwright install --with-deps chrome msedge
+
+# Build in VRT mode
 root@docker-desktop:/work# npm run build:vrt
 
 # Executing VRT
