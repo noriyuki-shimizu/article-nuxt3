@@ -29,7 +29,6 @@ jobs:
         run: npm run test:ut
 
   vrt-with-playwright:
-    needs: build-and-test
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.41.1-jammy
