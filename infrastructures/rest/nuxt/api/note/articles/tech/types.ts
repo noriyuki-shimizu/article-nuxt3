@@ -15,13 +15,13 @@ interface NoteEmbeddedContent {
 }
 
 interface NoteUserShareAppeal {
-  text: string;
-  image: string;
+  text: string | null;
+  image: string | null;
 }
 
 interface NoteUserMagazineAddAppeal {
-  text: string;
-  image: string;
+  text: string | null;
+  image: string | null;
 }
 
 interface NoteCustomDomain {
@@ -44,17 +44,17 @@ export interface NoteUser {
   disableSupport: boolean;
   isFollowing: boolean;
   isMe: boolean;
-  likeAppealText: string;
-  likeAppealImage: string;
+  likeAppealText: string | null;
+  likeAppealImage: string | null;
   shareAppeal: NoteUserShareAppeal;
   magazineAddAppeal: NoteUserMagazineAddAppeal;
-  purchaseAppealTextNote: string;
-  purchaseAppealTextMagazine: string;
-  purchaseAppealTextSupport: string;
-  followAppealText: string;
-  followAppealImage: string;
-  twitterNickname: string;
-  customDomain: NoteCustomDomain;
+  purchaseAppealTextNote: string | null;
+  purchaseAppealTextMagazine: string | null;
+  purchaseAppealTextSupport: string | null;
+  followAppealText: string | null;
+  followAppealImage: string | null;
+  twitterNickname: string | null;
+  customDomain: NoteCustomDomain | null;
 }
 
 export interface NoteTechArticle {
@@ -110,7 +110,7 @@ export interface NoteTechArticle {
   eyecatch?: string;
   eyecatchWidth?: number;
   eyecatchHeight?: number;
-  spEyecatch: string;
+  spEyecatch: string | null;
   hasDraft: boolean;
   isDraft: null;
   isPublished: boolean;
@@ -124,7 +124,7 @@ export interface NoteTechArticle {
   hashtagNotes: [];
   hasCoupon: boolean;
   priorSale: null;
-  customDomain: NoteCustomDomain;
+  customDomain: NoteCustomDomain | null;
   editableScopes: string[];
   nonEditableReason: null;
 }

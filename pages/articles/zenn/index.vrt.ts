@@ -1,10 +1,10 @@
-import { handleGetArticles, handleGetEmptyArticles } from '../../../infrastructures/rest/qiita.com/api/v2/items/__mock__/msw'
+import { handleGetArticles, handleGetEmptyArticles } from '../../../infrastructures/rest/nuxt/api/zenn/articles/__mock__/msw'
 import { test, expect } from '../../../tests/playwright'
 
-test.describe('Qiita記事一覧', () => {
+test.describe('Zenn記事一覧', () => {
   test('初期表示', async ({ page, worker }) => {
     await worker.use(handleGetArticles())
-    await page.goto('/articles/qiita?id=1')
+    await page.goto('/articles/zenn?id=1')
     await page.waitForLoadState('domcontentloaded')
 
     const infiniteScrollListDisplayData = page.locator('#infinite-scroll-list-display-data')
@@ -29,7 +29,7 @@ test.describe('Qiita記事一覧', () => {
 
   test('初期表示（空データ）', async ({ page, worker }) => {
     await worker.use(handleGetEmptyArticles())
-    await page.goto('/articles/qiita?id=1')
+    await page.goto('/articles/zenn?id=1')
     await page.waitForLoadState('domcontentloaded')
 
     const infiniteScrollListDisplayData = page.locator('#infinite-scroll-list-display-empty-data')
