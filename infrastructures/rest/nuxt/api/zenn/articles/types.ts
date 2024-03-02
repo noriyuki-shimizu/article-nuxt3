@@ -33,7 +33,7 @@ export interface ZennArticle {
   isSuspendingPrivate: boolean,
   publishedAt: string,
   bodyUpdatedAt: string,
-  sourceRepoUpdatedAt: string,
+  sourceRepoUpdatedAt: string | null,
   pinned: boolean,
   path: string,
   user: ZennArticleUser,
