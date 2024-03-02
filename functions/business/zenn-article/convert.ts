@@ -9,7 +9,9 @@ import type { ZennArticleViewModel } from '@/store/page/articles/zenn'
  * 記事に関する情報を含むオブジェクトです。
  * @returns Zenn 記事のビュー モデル オブジェクトの配列
  */
-export const convertApiResponseToViewModel = (response: ZennArticleResponse | undefined): ZennArticleViewModel[] | null => {
+export const convertApiResponseToViewModel = (
+  response: ZennArticleResponse | undefined
+): ZennArticleViewModel[] | null => {
   if (LangUtil.isUndefined(response)) {
     return null
   }

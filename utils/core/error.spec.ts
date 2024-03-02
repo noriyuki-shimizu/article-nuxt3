@@ -1,5 +1,5 @@
 import { FetchError } from 'ofetch'
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { convertNuxtError } from './error'
 import { StatusCode } from '@/enums/common/http/statusCode'
 

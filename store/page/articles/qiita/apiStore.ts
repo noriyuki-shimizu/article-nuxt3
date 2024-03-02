@@ -36,7 +36,7 @@ export const usePageApiStore = () => {
      * @param {string} [keyword] -
      * 「keyword」パラメータは、記事のフィルタリングに使用する検索語またはキーワードを表す文字列です。これはオプションのパラメーターであるため、キーワードが指定されていない場合、関数はフィルターをかけずにすべての記事を取得します。
      */
-    async fetchArticles (keyword: string): Promise<void> {
+    async fetchArticles(keyword: string): Promise<void> {
       const response = await getQiitaArticlesRequest({ sort: 'created', page: 1, query: `title:${keyword}` })
 
       _state.value.articles = convertApiResponseToViewModel(response._data)
@@ -48,7 +48,7 @@ export const usePageApiStore = () => {
      * @param {number} page - `page`
      * パラメータは、取得する結果のページ番号を指定するために使用されます。これは記事のページ分割に使用され、結果の特定のページを取得できるようになります。
      */
-    async moreFetchArticles (keyword: string, page: number): Promise<void> {
+    async moreFetchArticles(keyword: string, page: number): Promise<void> {
       const response = await getQiitaArticlesRequest({ sort: 'created', page, query: `title:${keyword}` })
       const currentArticles = _state.value.articles || []
       const responseArticles = convertApiResponseToViewModel(response._data) || []

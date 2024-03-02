@@ -1,6 +1,6 @@
 import type { NuxtError } from '#app'
 import { FetchError } from 'ofetch'
-import { isString, isObject } from './lang'
+import { isObject, isString } from './lang'
 import { StatusCode } from '@/enums/common/http/statusCode'
 
 /**

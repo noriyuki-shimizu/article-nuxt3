@@ -1,5 +1,10 @@
 import type { AppFetchResponse, FetchResponse } from 'ofetch'
-import { createCommonFetchOption, generateRequestHashKey, getCacheValue, convertAppFetchResponse } from '@/functions/business/http/rest'
+import {
+  convertAppFetchResponse,
+  createCommonFetchOption,
+  generateRequestHashKey,
+  getCacheValue
+} from '@/functions/business/http/rest'
 import type { FetchRawParameters } from '@/types/core/http'
 
 /** Nuxt Server API 用の fetch 関数定義 */

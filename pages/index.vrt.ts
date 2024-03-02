@@ -1,4 +1,4 @@
-import { test, expect } from '../tests/playwright'
+import { expect, test } from '../tests/playwright'
 
 test.describe('トップページ', () => {
   test('初期表示', async ({ page }) => {

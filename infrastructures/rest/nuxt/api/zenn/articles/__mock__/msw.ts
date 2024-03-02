@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 import type { RequestHandler } from 'msw'
-import { successData, emptyData } from './fixture'
+import { emptyData, successData } from './fixture'
 
 /**
  * 関数「handleGetArticles」はQiita APIにGETリクエストを発行して記事を取得します。

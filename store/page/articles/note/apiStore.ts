@@ -36,7 +36,7 @@ export const usePageApiStore = () => {
      * `getNoteArticlesRequest` 関数を呼び出し、記事を取得します。応答を受信すると、`convertApiResponseToViewModel` 関数を使用して応答データを
      * View Model に変換し、それを `_state.value.articles` に割り当てます。この関数は、技術ノートの記事ページの初期の記事セットを取得する役割を果たします。
      */
-    async fetchArticles (): Promise<void> {
+    async fetchArticles(): Promise<void> {
       const response = await getNoteArticlesRequest({ sort: 'new', page: 1 })
 
       _state.value.articles = convertApiResponseToViewModel(response._data)
@@ -46,7 +46,7 @@ export const usePageApiStore = () => {
      * @param {number} page -
      * 「moreFetchArticles」関数の「page」パラメータは、フェッチする記事のページ番号を指定するために使用されます。このパラメータは結果のページ分割に役立ち、サーバーから記事の特定のページを取得できるようになります。
      */
-    async moreFetchArticles (page: number): Promise<void> {
+    async moreFetchArticles(page: number): Promise<void> {
       const response = await getNoteArticlesRequest({ sort: 'new', page })
       const currentArticles = _state.value.articles || []
       const responseArticles = convertApiResponseToViewModel(response._data) || []

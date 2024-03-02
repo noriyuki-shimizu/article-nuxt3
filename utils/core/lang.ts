@@ -96,10 +96,10 @@ export const isSet = <T>(value: unknown): value is Set<T> => {
  * @returns 関数 `isEmpty` はブール値を返します。入力値が空であるとみなされる場合は「true」を返し、そうでない場合は「false」を返します。
  */
 export const isEmpty: {
-    (value: string): boolean;
-    (value: Map<any, any> | Set<any> | ArrayLike<any> | null | undefined): boolean;
-    (value: object): boolean;
-    (value?: unknown): boolean;
+  (value: string): boolean
+  (value: Map<any, any> | Set<any> | ArrayLike<any> | null | undefined): boolean
+  (value: object): boolean
+  (value?: unknown): boolean
 } = (value: unknown): boolean => {
   if (isNil(value)) {
     return true

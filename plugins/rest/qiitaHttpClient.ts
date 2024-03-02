@@ -1,5 +1,10 @@
 import type { AppFetchResponse, FetchResponse } from 'ofetch'
-import { createCommonFetchOption, generateRequestHashKey, getCacheValue, convertAppFetchResponse } from '@/functions/business/http/rest'
+import {
+  convertAppFetchResponse,
+  createCommonFetchOption,
+  generateRequestHashKey,
+  getCacheValue
+} from '@/functions/business/http/rest'
 import type { FetchRawParameters } from '@/types/core/http'
 
 /** Qiita API 用の fetch 関数定義 */
@@ -21,7 +26,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         const commonFetchOption = createCommonFetchOption(options)
         const fetchOption: FetchRawParameters<T, string>[1] = {
           ...commonFetchOption,
-          async onRequest (context) {
+          async onRequest(context) {
             await commonFetchOption?.onRequest?.call(this, context)
 
             const { headers } = context.options

@@ -1,8 +1,5 @@
 import type { AppFetchResponse, FetchResponse } from 'ofetch'
-import {
-  createCommonFetchOption,
-  convertAppFetchResponse
-} from '@/server/functions/business/http/rest'
+import { convertAppFetchResponse, createCommonFetchOption } from '@/server/functions/business/http/rest'
 import type { FetchRawParameters } from '@/types/core/http'
 
 /**

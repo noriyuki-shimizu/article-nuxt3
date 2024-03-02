@@ -56,7 +56,8 @@ export const successData: QiitaArticleResponse = [
     updatedAt: '2024-02-23T11:09:43+09:00',
     url: 'https://qiita.com/takaYayoi/items/5d788b10ec8939ed3474',
     user: {
-      description: 'Databricksのマネージャ、ソリューションアーキテクトです。こちらでDatabricks/Spark関連の情報をシェアできたらと考えています。',
+      description:
+        'Databricksのマネージャ、ソリューションアーキテクトです。こちらでDatabricks/Spark関連の情報をシェアできたらと考えています。',
       facebookId: 'takaaki.yayoi',
       followeesCount: 11,
       followersCount: 315,
@@ -289,12 +290,15 @@ export const successData: QiitaArticleResponse = [
     private: false,
     reactionsCount: 0,
     stocksCount: 0,
-    tags: [{ name: 'JavaScript' }, { name: 'Rails' }, { name: 'jQuery' }, { name: '初心者' }, { name: 'RubyonRails6.0' }],
+    tags: [{ name: 'JavaScript' }, { name: 'Rails' }, { name: 'jQuery' }, { name: '初心者' }, {
+      name: 'RubyonRails6.0'
+    }],
     title: '【Rails】RailsにJS, jQueryを実装する方法',
     updatedAt: '2024-02-22T22:37:29+09:00',
     url: 'https://qiita.com/gintaro0111/items/a971de668bf5538592ed',
     user: {
-      description: '2024年1月からプログラミングの勉強開始！\r\n転職に向けて日々アウトプットの練習をしています！\r\n初心者のため、何か修正点などあれば教えていただけますと幸いです()',
+      description:
+        '2024年1月からプログラミングの勉強開始！\r\n転職に向けて日々アウトプットの練習をしています！\r\n初心者のため、何か修正点などあれば教えていただけますと幸いです()',
       facebookId: '',
       followeesCount: 2,
       followersCount: 0,
@@ -327,7 +331,9 @@ export const successData: QiitaArticleResponse = [
     private: false,
     reactionsCount: 0,
     stocksCount: 0,
-    tags: [{ name: '電気' }, { name: '電気自動車' }, { name: '電気系ガチ素人' }, { name: '電気回路' }, { name: '電気主任技術者' }],
+    tags: [{ name: '電気' }, { name: '電気自動車' }, { name: '電気系ガチ素人' }, { name: '電気回路' }, {
+      name: '電気主任技術者'
+    }],
     title: '誘導機の諸性質',
     updatedAt: '2024-02-22T22:34:17+09:00',
     url: 'https://qiita.com/arairuca/items/0d81c5b96ac5154b2544',

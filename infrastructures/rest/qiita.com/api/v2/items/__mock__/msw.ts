@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 import type { RequestHandler } from 'msw'
-import { successData, emptyData } from './fixture'
+import { emptyData, successData } from './fixture'
 
 /**
  * 関数「handleGetArticles」は記事を取得するために Qiita API に GET リクエストを発行し、ステータス コード 200 で成功の応答を返します。

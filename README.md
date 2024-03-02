@@ -2,7 +2,6 @@
 
 https://shiminori-tec-articles.onrender.com/
 
-
 ## Setup
 
 Make sure to install the dependencies:
@@ -87,4 +86,5 @@ npm run preview
 ```
 
 ## Deploy
+
 Server: [Render](https://dashboard.render.com/)
