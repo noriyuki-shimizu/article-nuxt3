@@ -17,9 +17,12 @@ export const convertLocationQuery = <T extends Record<string, unknown>>(
     if (!isEmpty(enableQueryKey) && !enableQueryKey.includes(key)) {
       return a
     }
-    return Object.assign(a, snakeCaseKeys({
-      [key]: String(value)
-    }, { deep: true }))
+    return Object.assign(
+      a,
+      snakeCaseKeys({
+        [key]: String(value)
+      }, { deep: true })
+    )
   }, {})
 }
 

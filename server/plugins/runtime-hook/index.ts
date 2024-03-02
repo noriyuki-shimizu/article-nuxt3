@@ -13,8 +13,8 @@ export default defineNitroPlugin((nitroApp) => {
       return
     }
     if (
-      event.path.includes('/img/') &&
-      (event.path.includes('.png') || event.path.includes('.jpeg'))
+      event.path.includes('/img/')
+      && (event.path.includes('.png') || event.path.includes('.jpeg'))
     ) {
       event.node.res.setHeader('Cache-Control', 'max-age=31536000')
     }

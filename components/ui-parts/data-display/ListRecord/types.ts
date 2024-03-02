@@ -3,7 +3,7 @@ export interface LinkBridge {
   /** リンク */
   to: string
   /** ターゲット */
-  target?: string,
+  target?: string
   /** エリアラベル */
   ariaLabel?: string
 }

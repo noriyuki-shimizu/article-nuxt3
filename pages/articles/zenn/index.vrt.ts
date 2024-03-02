@@ -1,5 +1,8 @@
-import { handleGetArticles, handleGetEmptyArticles } from '../../../infrastructures/rest/nuxt/api/zenn/articles/__mock__/msw'
-import { test, expect } from '../../../tests/playwright'
+import {
+  handleGetArticles,
+  handleGetEmptyArticles
+} from '../../../infrastructures/rest/nuxt/api/zenn/articles/__mock__/msw'
+import { expect, test } from '../../../tests/playwright'
 
 test.describe('Zenn記事一覧', () => {
   test('初期表示', async ({ page, worker }) => {

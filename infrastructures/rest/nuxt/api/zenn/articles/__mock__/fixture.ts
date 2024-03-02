@@ -150,7 +150,8 @@ export const successData: ZennArticleResponse = {
     {
       id: 250574,
       postType: 'Article',
-      title: '『「漢文は教養だ！」って議論が再度賑わうが「その教養、ぜんぶ現代口語訳で学んじゃだめですか？」と問われたら？』という話をプログラミングでも考',
+      title:
+        '『「漢文は教養だ！」って議論が再度賑わうが「その教養、ぜんぶ現代口語訳で学んじゃだめですか？」と問われたら？』という話をプログラミングでも考',
       slug: '9b3de1645b49a4',
       commentsCount: 0,
       likedCount: 0,

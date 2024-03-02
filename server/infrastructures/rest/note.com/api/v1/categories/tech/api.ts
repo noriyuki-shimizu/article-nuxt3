@@ -1,8 +1,5 @@
 import type { AppFetchResponse } from 'ofetch'
-import type {
-  NoteTechArticleRequestQuery,
-  NoteTechArticleResponse
-} from './types'
+import type { NoteTechArticleRequestQuery, NoteTechArticleResponse } from './types'
 import http from '@/server/infrastructures/rest/http'
 
 /**

@@ -26,14 +26,14 @@ const isRequestBodyRecordObject = (
   body?: BodyInit | Record<string, any> | null
 ): body is Record<string, unknown> => {
   return !(
-    LangUtil.isNil(body) ||
-    LangUtil.isString(body) ||
-    body instanceof ReadableStream ||
-    body instanceof Blob ||
-    body instanceof ArrayBuffer ||
-    ArrayBuffer.isView(body) ||
-    body instanceof FormData ||
-    body instanceof URLSearchParams
+    LangUtil.isNil(body)
+    || LangUtil.isString(body)
+    || body instanceof ReadableStream
+    || body instanceof Blob
+    || body instanceof ArrayBuffer
+    || ArrayBuffer.isView(body)
+    || body instanceof FormData
+    || body instanceof URLSearchParams
   )
 }
 
@@ -67,7 +67,7 @@ export const createCommonFetchOption = <T = unknown>(
 ): FetchRawParameters<T>[1] => {
   return {
     ...options,
-    onRequest (context) {
+    onRequest(context) {
       const { params, query, body } = context.options
 
       if (!LangUtil.isUndefined(params)) {
@@ -80,7 +80,7 @@ export const createCommonFetchOption = <T = unknown>(
         context.options.body = snakecaseKeys(body, { deep: true })
       }
     },
-    onResponse (context) {
+    onResponse(context) {
       context.response._data = camelcaseKeys(context.response._data, {
         deep: true
       })

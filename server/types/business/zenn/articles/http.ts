@@ -1,5 +1,5 @@
 export interface ZennArticleApiRequestQuery {
-  category?: string,
+  category?: string
   order?: string
   page?: number
 }
