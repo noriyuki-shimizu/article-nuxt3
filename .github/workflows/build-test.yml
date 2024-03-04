@@ -31,7 +31,7 @@ jobs:
   vrt-with-playwright:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.41.1-jammy
+      image: mcr.microsoft.com/playwright:v1.42.1-jammy
     strategy:
       matrix:
         node-version: [20.11.1]
