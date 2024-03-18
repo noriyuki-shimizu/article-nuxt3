@@ -10,14 +10,8 @@
   "ignoreDeps": ["node", "npm"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackagePatterns": ["/eslint/"],
-      "groupName": "eslint"
-    },
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackagePatterns": ["/stylelint/"],
-      "groupName": "stylelint"
+      "matchPackagePatterns": ["^@vueuse"],
+      "groupName": "vueuse packages"
     }
   ]
 }
