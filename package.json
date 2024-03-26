@@ -47,7 +47,7 @@
     "nuxt": "^3.11.1",
     "playwright-core": "^1.41.1",
     "playwright-msw": "^3.0.1",
-    "postcss": "^8.4.34",
+    "postcss": "^8.4.38",
     "postcss-html": "^1.6.0",
     "postcss-scss": "^4.0.9",
     "sass": "^1.69.7",
