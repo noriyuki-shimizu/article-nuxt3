@@ -43,7 +43,7 @@
     "eslint-plugin-security": "^2.1.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "happy-dom": "^13.7.8",
-    "msw": "^2.2.1",
+    "msw": "^2.2.10",
     "nuxt": "^3.11.1",
     "playwright-core": "^1.41.1",
     "playwright-msw": "^3.0.1",
