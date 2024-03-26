@@ -48,12 +48,12 @@
         "pathGroups": [
           {
             "pattern": "#*",
-            "group": "builtin"
+            "group": "parent",
+            "position": "before"
           },
           {
             "pattern": "assets/**",
-            "group": "index",
-            "position": "before"
+            "group": "index"
           },
           {
             "pattern": "public/**",
