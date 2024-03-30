@@ -26,7 +26,7 @@ export const convertApiResponseToViewModel = (
       title: article.title,
       updatedAt: dayjs(article.updatedAt).format(DATE_YYYYMMDD_JP),
       url: article.url,
-      tagNames: article.tags.map<string>((tag) => {
+      tagNames: article.tags.map((tag) => {
         return tag.name
       }),
       userId: article.user.id,

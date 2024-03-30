@@ -1,4 +1,9 @@
-import type { QiitaArticle, QiitaTag, QiitaUser } from '@/infrastructures/rest/qiita.com/api/v2/items'
+import type {
+  QiitaArticle,
+  QiitaArticleRequestQuery,
+  QiitaTag,
+  QiitaUser
+} from '@/infrastructures/rest/qiita.com/api/v2/items'
 
 /** Qiita の記事データにおける View Model */
 export interface QiitaArticleViewModel {
@@ -20,6 +25,8 @@ export interface QiitaArticleViewModel {
 
 /** API State */
 export interface ApiState {
+  /** 記事データ取得におけるリクエストデータ */
+  articleRequestData: QiitaArticleRequestQuery | null
   /** 記事データにおける View Model */
   articles: QiitaArticleViewModel[] | null
 }

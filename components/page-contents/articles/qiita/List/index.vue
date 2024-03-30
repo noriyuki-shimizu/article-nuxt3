@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
+import { getKeyword } from '@/functions/business/qiita-article/query'
+import { usePageApiStore } from '@/store/page/articles/qiita'
 import type { QiitaArticleViewModel } from '@/store/page/articles/qiita'
 
 /** Page API Store */
 const pageApiStore = usePageApiStore()
 
-/** Page UI Store */
-const pageUiStore = usePageUiStore()
+/** Route */
+const route = useRoute()
 
 /** Qiita 記事一覧データ */
 const articles = computed<QiitaArticleViewModel[]>((oldValue) => {
@@ -24,8 +25,8 @@ const articles = computed<QiitaArticleViewModel[]>((oldValue) => {
  */
 const onLoad = async (page: number) => {
   const beforeArticles = articles.value
-  const searchKeyword = pageUiStore.searchKeyword.value || ''
-  await pageApiStore.moreFetchArticles(searchKeyword, page)
+  pageApiStore.setArticleRequestData(getKeyword(route.query), page)
+  await pageApiStore.moreFetchArticles()
   return beforeArticles.length === articles.value?.length
 }
 </script>
