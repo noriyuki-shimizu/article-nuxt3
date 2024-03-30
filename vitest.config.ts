@@ -1,14 +1,8 @@
-import path from 'path'
 import { defineVitestConfig } from '@nuxt/test-utils/config'
 import { configDefaults } from 'vitest/config'
 
 /** Vitest設定 */
 export default defineVitestConfig({
-  resolve: {
-    alias: {
-      '@': path.resolve(process.cwd(), '.')
-    }
-  },
   test: {
     globals: true,
     environment: 'happy-dom',

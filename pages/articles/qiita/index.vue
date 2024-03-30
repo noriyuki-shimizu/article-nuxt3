@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ENABLE_QUERY_KEY } from '@/constants/business/route/query'
+import { getKeyword } from '@/functions/business/qiita-article/query'
 import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
 
 /** Runtime Config */
@@ -21,19 +21,18 @@ definePageMeta({
       }
 
       const pageUiStore = usePageUiStore()
-      const queryValue = RouteUtil.convertLocationQueryToValue(query, ENABLE_QUERY_KEY)
-      pageUiStore.setSearchKeyword('q' in queryValue ? queryValue.q : null)
+      pageUiStore.setSearchKeyword(getKeyword(query))
     },
-    async () => {
+    async ({ query }) => {
       const nuxtApp = useNuxtApp()
       if (nuxtApp.isHydrating) {
         return
       }
 
       try {
-        const pageUiStore = usePageUiStore()
         const pageApiStore = usePageApiStore()
-        await pageApiStore.fetchArticles(pageUiStore.searchKeyword.value || '')
+        pageApiStore.setArticleRequestData(getKeyword(query))
+        await pageApiStore.fetchArticles()
       } catch (err) {
         return nuxtApp.runWithContext(() => {
           const nuxtError = ErrorUtil.convertNuxtError(err)

@@ -10,6 +10,7 @@ export const usePageApiStore = () => {
   /** State */
   const _state = useState<ApiState>('page-api-articles-qiita-store', () => {
     return {
+      articleRequestData: null,
       articles: null
     }
   })
@@ -32,12 +33,23 @@ export const usePageApiStore = () => {
   /** Action */
   const actions = {
     /**
+     * 提供された TypeScript コードの `setArticleRequestData` 関数は、状態の `articleRequestData` プロパティを次のプロパティを持つオブジェクトに設定します。
+     * @param keyword キーワード
+     * @param page ページ番号
+     */
+    setArticleRequestData(keyword: string | null, page: number = 1): void {
+      _state.value.articleRequestData = { sort: 'created', page, query: `title:${keyword}` }
+    },
+    /**
      * 記事一覧を取得し、レスポンスデータをView Modelに変換する
      * @param {string} [keyword] -
      * 「keyword」パラメータは、記事のフィルタリングに使用する検索語またはキーワードを表す文字列です。これはオプションのパラメーターであるため、キーワードが指定されていない場合、関数はフィルターをかけずにすべての記事を取得します。
      */
-    async fetchArticles(keyword: string): Promise<void> {
-      const response = await getQiitaArticlesRequest({ sort: 'created', page: 1, query: `title:${keyword}` })
+    async fetchArticles(): Promise<void> {
+      if (LangUtil.isNull(_state.value.articleRequestData)) {
+        throw createError('ArticleRequestData is not set')
+      }
+      const response = await getQiitaArticlesRequest(_state.value.articleRequestData)
 
       _state.value.articles = convertApiResponseToViewModel(response._data)
     },
@@ -48,8 +60,12 @@ export const usePageApiStore = () => {
      * @param {number} page - `page`
      * パラメータは、取得する結果のページ番号を指定するために使用されます。これは記事のページ分割に使用され、結果の特定のページを取得できるようになります。
      */
-    async moreFetchArticles(keyword: string, page: number): Promise<void> {
-      const response = await getQiitaArticlesRequest({ sort: 'created', page, query: `title:${keyword}` })
+    async moreFetchArticles(): Promise<void> {
+      if (LangUtil.isNull(_state.value.articleRequestData)) {
+        throw createError('ArticleRequestData is not set')
+      }
+
+      const response = await getQiitaArticlesRequest(_state.value.articleRequestData)
       const currentArticles = _state.value.articles || []
       const responseArticles = convertApiResponseToViewModel(response._data) || []
       _state.value.articles = [...currentArticles, ...responseArticles]
