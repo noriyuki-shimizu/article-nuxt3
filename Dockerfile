@@ -1,4 +1,4 @@
-FROM node:20.11.1-alpine3.19 as build-stage
+FROM node:20.12.0-alpine3.19 as build-stage
 
 ENV TZ Asia/Tokyo
 
@@ -8,7 +8,7 @@ RUN npm install
 RUN npm run build
 
 # 実行ステージ
-FROM node:20.11.1-alpine3.19
+FROM node:20.12.0-alpine3.19
 ENV TZ Asia/Tokyo
 
 WORKDIR /app

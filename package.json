@@ -76,12 +76,12 @@
     "@rollup/rollup-linux-x64-gnu": "4.13.2"
   },
   "engines": {
-    "node": "^20.11.x",
+    "node": "^20.12.x",
     "npm": "^10.2.x"
   },
   "volta": {
-    "node": "20.11.1",
-    "npm": "10.2.4"
+    "node": "20.12.1",
+    "npm": "10.5.0"
   },
   "msw": {
     "workerDirectory": [
