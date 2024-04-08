@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.11.1]
+        node-version: [20.12.1]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -34,7 +34,7 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.42.1-jammy
     strategy:
       matrix:
-        node-version: [20.11.1]
+        node-version: [20.12.1]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
