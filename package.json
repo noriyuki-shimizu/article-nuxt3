@@ -24,7 +24,7 @@
     "test:vrt:ui": "npm run test:vrt -- --ui"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxt/eslint-config": "^0.3.10",
     "@nuxt/image": "^1.4.0",
     "@nuxt/test-utils": "^3.10.0",
     "@playwright/test": "^1.41.2",
