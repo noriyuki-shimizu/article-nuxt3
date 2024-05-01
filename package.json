@@ -24,12 +24,12 @@
     "test:vrt:ui": "npm run test:vrt -- --ui"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.2.0",
-    "@nuxt/image": "^1.4.0",
+    "@nuxt/eslint-config": "^0.3.10",
+    "@nuxt/image": "^1.6.0",
     "@nuxt/test-utils": "^3.10.0",
     "@playwright/test": "^1.41.2",
     "@types/node": "^20.11.29",
-    "@typescript-eslint/parser": "^7.5.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "@vitest/coverage-v8": "^1.2.2",
     "@vue/test-utils": "^2.4.4",
     "@vueuse/core": "^10.7.2",
@@ -50,7 +50,7 @@
     "postcss": "^8.4.34",
     "postcss-html": "^1.6.0",
     "postcss-scss": "^4.0.9",
-    "sass": "^1.69.7",
+    "sass": "^1.75.0",
     "sass-loader": "^14.1.1",
     "stylelint": "^16.2.0",
     "stylelint-config-recess-order": "^5.0.0",
@@ -59,7 +59,7 @@
     "stylelint-config-standard": "^36.0.0",
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.0.0",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.5",
     "vitest": "^1.2.2",
     "vue": "^3.4.14",
     "vue-router": "^4.2.5",
@@ -73,7 +73,7 @@
     "vite-svg-loader": "^5.1.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.13.2"
+    "@rollup/rollup-linux-x64-gnu": "4.17.2"
   },
   "engines": {
     "node": "^20.12.x",
