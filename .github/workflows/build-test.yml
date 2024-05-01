@@ -20,7 +20,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Run Build (and Type Check)
         run: npm run build
       - name: Run lint
@@ -43,7 +43,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Run VRT Build
         run: npm run build:vrt
       - name: Install Playwright Browsers
