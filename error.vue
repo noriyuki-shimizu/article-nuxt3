@@ -5,9 +5,6 @@ import type { ErrorProps } from '@/types/core/errorPage'
 /** Props */
 const props = defineProps<ErrorProps>()
 
-/** Runtime Config */
-const runtimeConfig = useRuntimeConfig()
-
 /**
  * エラーのタイトルを取得する
  * @returns エラータイトル
@@ -48,11 +45,11 @@ prerenderRoutes(['/'])
       {{ getErrorTitle() }}
     </h2>
 
-    <template v-if="!runtimeConfig.public.isProduction">
+    <DevOnly>
       <div :class="$style['error-detail']">
         {{ props.error }}
       </div>
-    </template>
+    </DevOnly>
 
     <NuxtLink
       to="/"
