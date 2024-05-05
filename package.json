@@ -35,7 +35,7 @@
     "@vueuse/core": "^10.7.2",
     "@vueuse/nuxt": "^10.7.2",
     "dprint": "^0.45.0",
-    "eslint": "^8.56.0",
+    "eslint": "^9.0.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
