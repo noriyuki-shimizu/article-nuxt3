@@ -45,7 +45,7 @@
     "happy-dom": "^13.7.8",
     "msw": "^2.2.1",
     "nuxt": "^3.11.1",
-    "playwright-core": "^1.43.1",
+    "playwright-core": "^1.44.1",
     "playwright-msw": "^3.0.1",
     "postcss": "^8.4.34",
     "postcss-html": "^1.6.0",
