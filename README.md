@@ -40,10 +40,10 @@ Executing VRT:
 
 ```bash
 # Image pull
-docker pull mcr.microsoft.com/playwright:v1.44.1-jammy
+docker pull mcr.microsoft.com/playwright:v1.43.1-jammy
 
 # Docker run
-docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.44.1-jammy /bin/bash
+docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.43.1-jammy /bin/bash
 
 ---
 
