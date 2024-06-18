@@ -28,7 +28,7 @@
     "@nuxt/image": "^1.6.0",
     "@nuxt/test-utils": "^3.10.0",
     "@playwright/test": "^1.43.1",
-    "@types/node": "^20.11.29",
+    "@types/node": "^20.14.4",
     "@typescript-eslint/parser": "^7.8.0",
     "@vitest/coverage-v8": "^1.2.2",
     "@vue/test-utils": "^2.4.4",
