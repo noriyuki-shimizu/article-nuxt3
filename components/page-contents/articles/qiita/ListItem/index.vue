@@ -14,7 +14,7 @@ const props = defineProps<Props>()
     <UiPartsDataDisplayListDetail>
       <template #header>
         <NuxtImg
-          :alt="props.article.userId"
+          :alt="`${props.article.userId} icon`"
           :src="props.article.userProfileImageUrl"
           :class="$style['list-item__img']"
           :ismap="false"
