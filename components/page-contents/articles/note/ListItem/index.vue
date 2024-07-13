@@ -21,7 +21,7 @@ const getPriceString = (): string => {
   >
     <template #leftAside>
       <NuxtImg
-        :alt="props.article.name"
+        :alt="`${props.article.name} Article icon`"
         :src="props.article.spEyecatch || '/img/no-image-icon.jpg'"
         :class="$style['list-item__main-img']"
         ismap
@@ -35,7 +35,7 @@ const getPriceString = (): string => {
     <UiPartsDataDisplayListDetail :class="$style['list-item__list-detail']">
       <template #header>
         <NuxtImg
-          :alt="props.article.name"
+          :alt="`${props.article.userUrlname} icon`"
           :src="props.article.userUserProfileImagePath"
           :class="$style['list-item__profile-img']"
           ismap
