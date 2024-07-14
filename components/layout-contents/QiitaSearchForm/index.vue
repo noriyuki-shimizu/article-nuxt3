@@ -21,7 +21,10 @@ const searchKeyword = uiStore.searchKeyword
  * 状態に検索キーワードを設定します。
  * @param {string} keyword - キーワードパラメータは、検索に使用される検索キーワードを表す文字列です。
  */
-const setSearchKeyword = (keyword: string): void => {
+const setSearchKeyword = (keyword: string | null): void => {
+  if (LangUtil.isNull(keyword)) {
+    return
+  }
   uiStore.setSearchKeyword(keyword.trim())
 }
 

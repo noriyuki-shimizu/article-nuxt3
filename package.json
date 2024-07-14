@@ -63,7 +63,7 @@
     "vitest": "^1.2.2",
     "vue": "^3.4.14",
     "vue-router": "^4.2.5",
-    "vue-tsc": "^1.8.27"
+    "vue-tsc": "^2.0.26"
   },
   "dependencies": {
     "camelcase-keys": "^9.1.3",
