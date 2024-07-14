@@ -5,42 +5,20 @@ import { usePageApiStore, usePageUiStore } from '@/store/page/articles/qiita'
 /** Runtime Config */
 const config = useRuntimeConfig()
 
+/** Route */
+const route = useRoute()
+
 /** API Store */
 const pageApiStore = usePageApiStore()
+
+/** UI Store */
+const pageUiStore = usePageUiStore()
 
 definePageMeta({
   layout: 'desktop-articles-qiita',
   key (route) {
     return route.fullPath
-  },
-  middleware: [
-    ({ query }) => {
-      const nuxtApp = useNuxtApp()
-      if (nuxtApp.isHydrating) {
-        return
-      }
-
-      const pageUiStore = usePageUiStore()
-      pageUiStore.setSearchKeyword(getKeyword(query))
-    },
-    async ({ query }) => {
-      const nuxtApp = useNuxtApp()
-      if (nuxtApp.isHydrating) {
-        return
-      }
-
-      try {
-        const pageApiStore = usePageApiStore()
-        pageApiStore.setArticleRequestData(getKeyword(query))
-        await pageApiStore.fetchArticles()
-      } catch (err) {
-        return nuxtApp.runWithContext(() => {
-          const nuxtError = ErrorUtil.convertNuxtError(err)
-          return abortNavigation({ ...nuxtError, fatal: true })
-        })
-      }
-    }
-  ]
+  }
 })
 
 useSeoMeta({
@@ -64,6 +42,28 @@ useHead(() => {
     ]
   }
 })
+
+/** Async Data Result */
+const { error: errorRef } = await useAsyncData(async () => {
+  const { query } = route
+  pageUiStore.setSearchKeyword(getKeyword(query))
+
+  try {
+    const pageApiStore = usePageApiStore()
+    pageApiStore.setArticleRequestData(getKeyword(query))
+    await pageApiStore.fetchArticles()
+  } catch (err) {
+    throw ErrorUtil.convertNuxtError(err)
+  }
+
+  return {}
+})
+
+/** Async Data Error */
+const error = unref(errorRef)
+if (!LangUtil.isNull(error)) {
+  throw error
+}
 
 await preloadComponents('PageContentsArticlesQiitaContainer')
 </script>
