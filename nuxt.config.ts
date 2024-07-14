@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: !process.env.VRT,
+  ssr: true,
   nitro: {
     plugins: ['plugins/runtime-hook/index.ts']
   },
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
     'tests/*',
     '**/__screenshots__/*',
     '**/__mock__/*',
-    '**/*.{spec,test,vrt}.{js,cts,mts,ts,jsx,tsx}',
+    '**/*.{spec,test}.{js,cts,mts,ts,jsx,tsx}',
     '**/*.d.{cts,mts,ts}',
     '**/.{output,git,cache,data}',
     '.nuxt/analyze'
