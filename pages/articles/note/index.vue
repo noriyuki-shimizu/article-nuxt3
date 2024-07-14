@@ -11,25 +11,7 @@ definePageMeta({
   layout: 'desktop-articles-note',
   key (route) {
     return route.fullPath
-  },
-  middleware: [
-    async () => {
-      const nuxtApp = useNuxtApp()
-      if (nuxtApp.isHydrating) {
-        return
-      }
-
-      try {
-        const pageApiStore = usePageApiStore()
-        await pageApiStore.fetchArticles()
-      } catch (err) {
-        return nuxtApp.runWithContext(() => {
-          const nuxtError = ErrorUtil.convertNuxtError(err)
-          return abortNavigation({ ...nuxtError, fatal: true })
-        })
-      }
-    }
-  ]
+  }
 })
 
 useSeoMeta({
@@ -53,6 +35,22 @@ useHead(() => {
     ]
   }
 })
+
+/** Async Data Result */
+const { error: errorRef } = await useAsyncData(async () => {
+  try {
+    await pageApiStore.fetchArticles()
+  } catch (err) {
+    throw ErrorUtil.convertNuxtError(err)
+  }
+  return {}
+})
+
+/** Async Data Error */
+const error = unref(errorRef)
+if (!LangUtil.isNull(error)) {
+  throw error
+}
 
 await preloadComponents('PageContentsArticlesNoteContainer')
 </script>
