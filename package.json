@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build --dotenv .env",
-    "build:vrt": "VRT=true npm run build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -18,16 +17,12 @@
     "format:d": "dprint fmt",
     "format:e": "npm run lint:e -- --fix",
     "format:s": "npm run lint:s -- --fix",
-    "test:ut": "vitest run",
-    "test:vrt": "playwright test -c playwright-vrt.config.ts",
-    "test:vrt:us": "npm run test:vrt -- --update-snapshots",
-    "test:vrt:ui": "npm run test:vrt -- --ui"
+    "test:ut": "vitest run"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.3.10",
     "@nuxt/image": "^1.6.0",
     "@nuxt/test-utils": "^3.13.1",
-    "@playwright/test": "1.45.1",
     "@types/node": "^20.14.10",
     "@typescript-eslint/parser": "^7.8.0",
     "@vitest/coverage-v8": "^1.2.2",
@@ -45,8 +40,6 @@
     "happy-dom": "^14.12.3",
     "msw": "^2.2.1",
     "nuxt": "^3.11.1",
-    "playwright-core": "1.45.1",
-    "playwright-msw": "^3.0.1",
     "postcss": "^8.4.34",
     "postcss-html": "^1.6.0",
     "postcss-scss": "^4.0.9",
